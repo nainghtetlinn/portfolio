@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.49762e5f.css",
+    "main.js": "/portfolio/static/js/main.dfa1d7a0.js",
+    "static/media/space_tourism.png": "/portfolio/static/media/space_tourism.c5fbe5d4e8ff914952ff.png",
+    "static/media/me.jpg": "/portfolio/static/media/me.cbaa65434c1ccb648b86.jpg",
+    "static/media/gueess.png": "/portfolio/static/media/gueess.93c5448c5dcfa3063ecb.png",
+    "static/media/target_within.png": "/portfolio/static/media/target_within.e964e215e0127eb69107.png",
+    "static/media/great_quotes.png": "/portfolio/static/media/great_quotes.2e8cf406096f5de18153.png",
+    "static/media/bg.svg": "/portfolio/static/media/bg.3cab123760484ed01f5d674293e2321c.svg",
+    "static/media/sass.svg": "/portfolio/static/media/sass.8aa78a8393470431c8036541f0708bd7.svg",
+    "static/media/react.svg": "/portfolio/static/media/react.e68b35f4774979ae220b1d5d7b345b00.svg",
+    "static/media/redux.svg": "/portfolio/static/media/redux.0e4fb1c819ac4c060c92343147d4ccf7.svg",
+    "static/media/bootstrap-5.svg": "/portfolio/static/media/bootstrap-5.98585727bcfe0b1555649ec9bbab236c.svg",
+    "static/media/javascript.svg": "/portfolio/static/media/javascript.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
+    "static/media/nextjs.svg": "/portfolio/static/media/nextjs.88b5e51c34ff270e4080d139d323c208.svg",
+    "static/media/typescript.svg": "/portfolio/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
+    "static/media/tailwind-css.svg": "/portfolio/static/media/tailwind-css.315d0ac2a2708d5f06972906113dfbf1.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/material-ui.svg": "/portfolio/static/media/material-ui.fd510ed8518b192069590b04e2e6348a.svg",
+    "main.49762e5f.css.map": "/portfolio/static/css/main.49762e5f.css.map",
+    "main.dfa1d7a0.js.map": "/portfolio/static/js/main.dfa1d7a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49762e5f.css",
+    "static/js/main.dfa1d7a0.js"
+  ]
+}

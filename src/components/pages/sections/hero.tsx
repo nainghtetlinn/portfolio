@@ -7,10 +7,10 @@ export const HeroSection = () => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="min-h-screen">
+    <section className="relative min-h-screen pt-20">
       {/* Dual Gradient Overlay Background */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0"
         style={{
           backgroundImage: `
         linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px),
@@ -46,9 +46,9 @@ export const HeroSection = () => {
         moveParticlesOnHover={false}
         alphaParticles={true}
         disableRotation={true}
-        className="absolute inset-0 z-10"
+        className="absolute inset-0"
       />
-      <div>hello</div>
+      <div className="relative">hello world</div>
     </section>
   );
 };

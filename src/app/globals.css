@@ -22,6 +22,7 @@
   --card: var(--white-edgar);
   --card-foreground: var(--ancient-lavastone);
 
+  --border: var(--ancient-lavastone);
   --radius: 1.25rem;
   --spacing: 0.25rem;
 }
@@ -38,6 +39,8 @@
 
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  --color-border: var(--border);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

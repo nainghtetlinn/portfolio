@@ -52,10 +52,10 @@ export const Navbar = () => {
           style={{
             opacity: backgroundOpacity,
           }}
-          className="absolute inset-0 bg-white/80 backdrop-blur-xs"
+          className="bg-background/70 absolute inset-0 backdrop-blur-xs"
         ></motion.div>
 
-        <nav className="text-foreground border-border relative flex h-20 w-full items-center justify-between border-b px-4 md:px-8">
+        <nav className="text-foreground relative flex h-20 w-full items-center justify-between px-4 md:px-8">
           {/* Logo */}
           <a
             href="#home"

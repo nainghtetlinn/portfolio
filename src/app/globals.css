@@ -8,7 +8,7 @@
   --card-foreground: oklch(0.3676 0.0205 64.1234);
 
   --primary: oklch(0.75 0.183 55.934);
-  --primary-foreground: oklch(1 0 0);
+  --primary-foreground: oklch(0.3676 0.0205 64.1234);
   --secondary: oklch(0.2478 0 0);
   --secondary-foreground: oklch(1 0 0);
 
@@ -46,6 +46,10 @@
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   html,
   body {
     @apply size-full;

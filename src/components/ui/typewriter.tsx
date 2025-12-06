@@ -132,4 +132,4 @@ const Typewriter = ({
   );
 };
 
-export default Typewriter;
+export { Typewriter };

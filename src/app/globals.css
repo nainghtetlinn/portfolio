@@ -47,7 +47,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border/40;
   }
 
   html,

@@ -3,7 +3,7 @@ import { HeroSection } from "./sections/hero";
 
 export const HomePage = () => {
   return (
-    <main className="bg-background relative min-h-screen w-full">
+    <main className="bg-background relative min-h-screen">
       <Navbar />
 
       <HeroSection />

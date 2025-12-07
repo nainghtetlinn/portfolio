@@ -20,6 +20,25 @@
   --spacing: 0.25rem;
 }
 
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.92 0.005 64.1234);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.92 0.005 64.1234);
+
+  --primary: oklch(0.705 0.213 47.604);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.8 0 0);
+  --secondary-foreground: oklch(0.12 0 0);
+
+  --accent: oklch(0.25 0 0);
+  --accent-foreground: oklch(0.92 0.005 64.1234);
+
+  --border: oklch(0.4 0.005 64.1234);
+  --radius: 1.25rem;
+  --spacing: 0.25rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

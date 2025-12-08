@@ -2,10 +2,12 @@
 
 import { Profile } from "@/components/profile";
 import { Button } from "@/components/ui/button";
+import { NumberTicker } from "@/components/ui/number-ticker";
 import { Particles } from "@/components/ui/particles";
 import { Typewriter } from "@/components/ui/typewriter";
 import useScreenSize from "@/hooks/use-screen-size";
-import { ArrowUpRight, Download } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -22,8 +24,47 @@ export const HeroSection = () => {
             <HeroText />
           </div>
         </div>
+        <StatsGrid />
       </div>
     </section>
+  );
+};
+
+const StatsGrid = () => {
+  return (
+    <div className="relative">
+      <div className="bg-background grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
+        {[
+          {
+            label: "Portfolio views",
+            value: 0,
+          },
+          { label: "Years of Experience", value: 4 },
+          { label: "Projects Shipped", value: 8 },
+          { label: "Happy Clients", value: 1 },
+        ].map((stat, i) => (
+          <div
+            key={i}
+            className={cn(
+              "group hover:bg-foreground/5 relative p-8 text-center transition-colors",
+              i !== 3 && "border-r",
+              i < 2 && "border-b lg:border-b-0",
+            )}
+          >
+            <div className="text-foreground mb-2 text-3xl font-bold">
+              <NumberTicker value={stat.value} />+
+            </div>
+            <div className="text-foreground/50 font-mono text-xs tracking-wider uppercase">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex">
+        SCROLL DOWN
+        <ArrowDownSquareIcon className="size-4 animate-pulse" />
+      </div>
+    </div>
   );
 };
 

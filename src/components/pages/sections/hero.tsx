@@ -2,7 +2,7 @@
 
 import { Profile } from "@/components/profile";
 import { Button } from "@/components/ui/button";
-import { NumberTicker } from "@/components/ui/number-ticker";
+import { CountUp } from "@/components/ui/count-up";
 import { Particles } from "@/components/ui/particles";
 import { Typewriter } from "@/components/ui/typewriter";
 import useScreenSize from "@/hooks/use-screen-size";
@@ -37,7 +37,7 @@ const StatsGrid = () => {
         {[
           {
             label: "Portfolio views",
-            value: 0,
+            value: 1000,
           },
           { label: "Years of Experience", value: 4 },
           { label: "Projects Shipped", value: 8 },
@@ -52,7 +52,7 @@ const StatsGrid = () => {
             )}
           >
             <div className="text-foreground mb-2 text-3xl font-bold">
-              <NumberTicker value={stat.value} />+
+              <CountUp from={0} to={stat.value} />+
             </div>
             <div className="text-foreground/50 font-mono text-xs tracking-wider uppercase">
               {stat.label}

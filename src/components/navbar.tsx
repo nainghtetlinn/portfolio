@@ -14,6 +14,7 @@ import {
 } from "motion/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/ui/logo";
 
 const NAV_LINKS = [
   { id: "home", label: "Home" },
@@ -59,13 +60,8 @@ export const Navbar = () => {
         <nav className="text-foreground relative z-10 container mx-auto px-4 md:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a
-              href="#home"
-              className="group relative inline-flex items-center p-2"
-            >
-              <div className="absolute top-0 left-0 h-4 w-4 border-t-2 border-l-2 transition-all duration-200 group-hover:h-full group-hover:w-full" />
-              <h3 className="text-2xl">Naing</h3>
-              <div className="absolute right-0 bottom-0 h-4 w-4 border-r-2 border-b-2 transition-all duration-200 group-hover:h-full group-hover:w-full" />
+            <a href="#home">
+              <Logo />
             </a>
 
             {/* Nav links */}

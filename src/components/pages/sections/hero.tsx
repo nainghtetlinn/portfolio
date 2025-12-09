@@ -4,9 +4,7 @@ import { Profile } from "@/components/profile";
 import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/ui/count-up";
 import { Particles } from "@/components/ui/particles";
-import { Typewriter } from "@/components/ui/typewriter";
 import useScreenSize from "@/hooks/use-screen-size";
-import { cn } from "@/lib/utils";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
@@ -35,21 +33,14 @@ const StatsGrid = () => {
     <div className="relative">
       <div className="bg-background grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
         {[
-          {
-            label: "Portfolio views",
-            value: 1000,
-          },
           { label: "Years of Experience", value: 4 },
           { label: "Projects Shipped", value: 8 },
           { label: "Happy Clients", value: 1 },
+          { label: "Open Source", value: 1 },
         ].map((stat, i) => (
           <div
             key={i}
-            className={cn(
-              "group hover:bg-foreground/5 relative p-8 text-center transition-colors",
-              i !== 3 && "border-r",
-              i < 2 && "border-b lg:border-b-0",
-            )}
+            className="hover:bg-foreground/5 relative border p-8 text-center transition-colors"
           >
             <div className="text-foreground mb-2 text-3xl font-bold">
               <CountUp from={0} to={stat.value} />+
@@ -95,10 +86,11 @@ const HeroText = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="mb-4 inline-flex items-center gap-2"
       >
-        <div className="bg-background border px-3 py-1">
-          <span className="text-foreground/80 font-mono text-xs">
-            {"<"} Hello World {"/>"}
+        <div className="bg-background border px-2 pb-1">
+          <span className="text-foreground/80 mr-2 font-mono text-xs">
+            Available
           </span>
+          <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
         </div>
         <div className="bg-secondary/60 h-px w-12" />
         <span className="text-foreground/80 font-mono text-xs md:text-sm">
@@ -111,19 +103,10 @@ const HeroText = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="font-incognito mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl"
+        className="mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl"
       >
         <span className="text-foreground">Hey, I&apos;m </span>
-        <span className="relative text-[#8cc2ff] italic">
-          <Typewriter
-            text={["Naing Htet Linn", "Tsuki"]}
-            speed={85}
-            waitTime={1500}
-            deleteSpeed={40}
-            cursorChar="|"
-            className="text-primary"
-          />
-        </span>
+        <p className="text-primary relative italic">Naing Htet Linn</p>
       </motion.h1>
 
       {/* Description */}
@@ -131,10 +114,19 @@ const HeroText = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="text-foreground/80 max-w-2xl font-mono text-sm font-light md:text-base"
+        className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
       >
-        Fullstack developer with a passion for building web applications. I
-        specialize in React, Next.js, Node.js, and TypeScript.
+        Software engineer from Myanmar with a passion for solving real-world
+        problems using modern technologies.
+      </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
+      >
+        My core stack includes React, Next.js, Node.js, MongoDB, PostgreSQL and
+        TypeScript.
       </motion.p>
 
       <motion.div

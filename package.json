@@ -21,6 +21,7 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tailwind-merge": "^3.4.0",
+    "tech-stack-icons": "^3.3.2",
     "zod": "^4.1.13"
   },
   "devDependencies": {

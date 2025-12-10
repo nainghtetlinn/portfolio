@@ -66,10 +66,13 @@ const TechStack = () => {
   return (
     <div
       className={cn(
-        "relative flex h-full w-full items-center justify-center overflow-hidden border",
+        "bg-card relative flex h-full w-full items-center justify-center overflow-hidden border",
         "has-[div:hover]:[&>div]:paused [&>div]:grayscale-100 [&>div]:hover:grayscale-0",
       )}
     >
+      <div className="bg-card/70 absolute top-0 left-0 z-10 border-r border-b p-2 backdrop-blur-xs">
+        <span>Tech Stack</span>
+      </div>
       {TECH_STACKS.map((items, index) => (
         <OrbitingCircles
           key={index}

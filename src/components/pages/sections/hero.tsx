@@ -85,7 +85,7 @@ const HeroPhoto = () => {
 
 const HeroText = () => {
   return (
-    <div className="md:flex-1">
+    <div className="w-full md:flex-1">
       {/* Status Badge */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -93,14 +93,14 @@ const HeroText = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="mb-4 inline-flex items-center gap-2"
       >
-        <div className="bg-background border px-2 pb-1">
+        <div className="bg-background shrink-0 border px-2 pb-1">
           <span className="text-foreground/80 mr-2 font-mono text-xs">
             Available
           </span>
           <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
         </div>
         <div className="bg-secondary/60 h-px w-12" />
-        <span className="text-foreground/80 font-mono text-xs md:text-sm">
+        <span className="text-foreground/80 shrink-0 font-mono text-xs md:text-sm">
           Full-Stack Developer
         </span>
       </motion.div>
@@ -140,7 +140,7 @@ const HeroText = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="mt-5 flex items-center gap-4 max-md:mx-auto max-md:justify-center"
+        className="mt-5 flex flex-col items-center gap-4 max-md:mx-auto max-md:justify-center sm:flex-row"
       >
         <Button asChild size="lg" className="group/btn border-2 font-medium">
           <a href={"#contact"}>

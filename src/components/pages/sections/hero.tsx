@@ -7,7 +7,6 @@ import { Particles } from "@/components/ui/particles";
 import useScreenSize from "@/hooks/use-screen-size";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 
 export const HeroSection = () => {
@@ -158,19 +157,27 @@ const HeroText = () => {
 };
 
 const HeroBackground = () => {
-  const { resolvedTheme } = useTheme();
   const screenSize = useScreenSize();
-  const isLight = resolvedTheme === "light";
 
   return (
     <div className="absolute inset-0 -z-10">
       {/* Dual Gradient Overlay Background */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 dark:hidden"
         style={{
           backgroundImage: `
-        linear-gradient(to right, ${isLight ? "rgba(229,231,235,0.8)" : "rgba(75, 85, 99, 0.4)"} 1px, transparent 1px),
-        linear-gradient(to bottom, ${isLight ? "rgba(229,231,235,0.8)" : "rgba(75, 85, 99, 0.4)"} 1px, transparent 1px)
+        linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(229,231,235,0.8) 1px, transparent 1px)
+      `,
+          backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden dark:block"
+        style={{
+          backgroundImage: `
+        linear-gradient(to right, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(75, 85, 99, 0.2) 1px, transparent 1px)
       `,
           backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
         }}

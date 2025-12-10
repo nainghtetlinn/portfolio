@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/ui/count-up";
 import { Particles } from "@/components/ui/particles";
 import useScreenSize from "@/hooks/use-screen-size";
+import { cn } from "@/lib/utils";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -30,7 +31,7 @@ export const HeroSection = () => {
 const StatsGrid = () => {
   return (
     <div className="relative">
-      <div className="bg-background grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
+      <div className="bg-background grid grid-cols-2 md:max-w-3/4 lg:grid-cols-4">
         {[
           { label: "Years of Experience", value: 4 },
           { label: "Projects Shipped", value: 8 },
@@ -39,7 +40,14 @@ const StatsGrid = () => {
         ].map((stat, i) => (
           <div
             key={i}
-            className="hover:bg-foreground/5 relative border p-8 text-center transition-colors"
+            className={cn(
+              "hover:bg-foreground/5 relative p-8 text-center transition-colors",
+              {
+                "border-t border-l": true,
+                "border-r": i == 1 || i == 3,
+                "lg:border-r-0": i == 1,
+              },
+            )}
           >
             <div className="text-foreground mb-2 text-3xl font-bold">
               <CountUp from={0} to={stat.value} />+

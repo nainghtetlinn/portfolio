@@ -2,6 +2,8 @@ import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { cn } from "@/lib/utils";
 import StackIcon from "tech-stack-icons";
+import { Lego } from "./lego";
+import { GridLabel } from "./grid-label";
 
 export const AboutSection = () => {
   return (
@@ -9,9 +11,10 @@ export const AboutSection = () => {
       <h2 className="text-primary pt-8 pb-4 text-center text-3xl">
         Who am I ?
       </h2>
+
       <main
         className={cn(
-          "grid gap-2 px-2 [&>div]:aspect-square",
+          "[&>div]:bg-card grid gap-2 px-2 [&>div]:border",
           "grid-cols-2 grid-rows-6",
           "sm:grid-cols-3",
           "md:grid-cols-4",
@@ -19,11 +22,32 @@ export const AboutSection = () => {
           "xl:grid-cols-6",
         )}
       >
-        <div className={cn("col-span-2 row-span-2")}>
+        <div
+          className={cn(
+            "relative flex items-center justify-center",
+            "col-span-1 col-start-1 row-span-1 row-start-1",
+          )}
+        >
+          <GridLabel>Location</GridLabel>
+          <h3 className="text-foreground mb-2 text-3xl font-bold">Myanmar</h3>
+        </div>
+        <div className={cn("col-span-1 col-start-1 row-span-1 row-start-2")}>
+          <h5>Location</h5>
+          <h3>Myanmar</h3>
+        </div>
+        <div
+          className={cn(
+            "col-span-1 col-start-2 row-span-2 row-start-1 h-[300px]",
+          )}
+        >
+          <Lego />
+        </div>
+        <div className={cn("relative", "col-span-2 row-span-2")}>
+          <GridLabel>Tech Stack</GridLabel>
           <TechStack />
         </div>
         <div className="col-span-1 row-span-1">
-          <div className="bg-background relative flex h-full w-full flex-col items-center justify-center overflow-hidden border">
+          <div className="bg-background relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
             <InteractiveGridPattern
               className={cn(
                 "mask-[radial-gradient(200px_circle_at_center,white,transparent)]",
@@ -32,14 +56,10 @@ export const AboutSection = () => {
             />
           </div>
         </div>
-        <div className="border"></div>
-        <div className="border"></div>
-        <div className="border"></div>
-        <div className="border"></div>
-        <div className="border"></div>
-        <div className="border"></div>
-        <div className="border"></div>
-        <div className="border"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </main>
     </section>
   );
@@ -66,13 +86,10 @@ const TechStack = () => {
   return (
     <div
       className={cn(
-        "bg-card relative flex h-full w-full items-center justify-center overflow-hidden border",
+        "bg-card relative flex h-full w-full items-center justify-center overflow-hidden",
         "has-[div:hover]:[&>div]:paused [&>div]:grayscale-100 [&>div]:hover:grayscale-0",
       )}
     >
-      <div className="bg-card/70 absolute top-0 left-0 z-10 border-r border-b p-2 backdrop-blur-xs">
-        <span>Tech Stack</span>
-      </div>
       {TECH_STACKS.map((items, index) => (
         <OrbitingCircles
           key={index}

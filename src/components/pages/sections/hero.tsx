@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <section className="relative z-0 overflow-hidden border-b pt-20">
+    <section className="relative z-0 overflow-hidden border-b pt-32">
       <HeroBackground />
 
       <div className="container mx-auto">
@@ -97,7 +97,7 @@ const HeroText = () => {
           <span className="text-foreground/80 mr-2 font-mono text-xs">
             Available
           </span>
-          <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
+          <span className="inline-block h-2 w-2 animate-ping rounded-full bg-green-500" />
         </div>
         <div className="bg-secondary/60 h-px w-12" />
         <span className="text-foreground/80 shrink-0 font-mono text-xs md:text-sm">

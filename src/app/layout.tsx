@@ -42,6 +42,13 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <div className="fixed right-0 bottom-0 bg-blue-200 p-4">
+          <span className="sm:hidden">xs</span>
+          <span className="hidden sm:inline md:hidden">sm</span>
+          <span className="hidden md:inline lg:hidden">md</span>
+          <span className="hidden lg:inline xl:hidden">lg</span>
+          <span className="hidden xl:inline">xl</span>
+        </div>
       </body>
     </html>
   );

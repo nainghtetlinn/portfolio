@@ -93,6 +93,18 @@
     @apply bg-background text-foreground;
   }
 
+  h1 {
+    @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+
+  h2 {
+    @apply text-lg md:text-xl lg:text-2xl xl:text-3xl;
+  }
+
+  p {
+    @apply text-sm md:text-base lg:text-lg xl:text-xl;
+  }
+
   h1,
   h2,
   h3,

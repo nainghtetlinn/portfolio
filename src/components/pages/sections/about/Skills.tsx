@@ -47,7 +47,7 @@ const SKILLS = [
 
 export const Skills = () => {
   return (
-    <section className="space-y-6 border-t px-4 py-4 md:px-8">
+    <section className="space-y-6 px-4 pt-8 md:px-8">
       <h2 className="font-bold">Skills & Tools</h2>
 
       <div className="grid gap-8 font-mono md:grid-cols-2">

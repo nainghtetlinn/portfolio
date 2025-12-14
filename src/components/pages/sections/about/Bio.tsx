@@ -1,3 +1,4 @@
+import { Frame } from "@/components/frame";
 import { Lego } from "./lego";
 
 export const Bio = () => {
@@ -23,10 +24,10 @@ export const Bio = () => {
         </p>
       </article>
 
-      <div className="flex flex-1 items-center justify-center">
-        <div className="aspect-square max-w-[350px]">
-          <Lego />
-        </div>
+      <div className="flex items-center justify-center">
+        <Frame className="w-full max-w-[350px] p-2">
+          <Lego className="aspect-square w-full" />
+        </Frame>
       </div>
     </section>
   );

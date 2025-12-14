@@ -1,36 +1,39 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Bounds, Center, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-export const Lego = () => {
+export const Lego = ({ className }: { className?: string }) => {
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[5, 5, 5]} />
+    <div className={cn(className)}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[5, 5, 5]} />
 
-      <Bounds fit clip observe margin={1}>
-        <Center>
-          <group>
-            <Model />
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.8, 0]}>
-              <circleGeometry args={[10, 32]} />
-              <meshBasicMaterial color="black" transparent opacity={0.25} />
-            </mesh>
-          </group>
-        </Center>
-      </Bounds>
+        <Bounds fit clip observe margin={1}>
+          <Center>
+            <group>
+              <Model />
+              <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.8, 0]}>
+                <circleGeometry args={[10, 32]} />
+                <meshBasicMaterial color="black" transparent opacity={0.25} />
+              </mesh>
+            </group>
+          </Center>
+        </Bounds>
 
-      <OrbitControls
-        makeDefault
-        enableDamping
-        autoRotate
-        autoRotateSpeed={5}
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-        enableZoom={false}
-      />
-    </Canvas>
+        <OrbitControls
+          makeDefault
+          enableDamping
+          autoRotate
+          autoRotateSpeed={5}
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
+          enableZoom={false}
+        />
+      </Canvas>
+    </div>
   );
 };
 

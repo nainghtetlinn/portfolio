@@ -53,9 +53,7 @@ export const Skills = () => {
       <div className="grid gap-8 font-mono md:grid-cols-2">
         {SKILLS.map((skill) => (
           <div key={skill.label} className="space-y-4">
-            <h5 className="font-semibold lg:text-lg xl:text-xl">
-              {skill.label}
-            </h5>
+            <h3>{skill.label}</h3>
             <div className="flex flex-wrap gap-2">
               {skill.items.map((item) => (
                 <span

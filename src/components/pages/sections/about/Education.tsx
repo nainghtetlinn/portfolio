@@ -6,9 +6,7 @@ export const Education = () => {
       <div className="relative border-l pl-4 font-mono">
         <div className="bg-secondary absolute top-0 left-0 h-2.5 w-2.5 -translate-1/2 rounded-full"></div>
 
-        <h5 className="mb-4 text-lg font-bold lg:text-xl xl:text-2xl">
-          Technological University (Taunggyi)
-        </h5>
+        <h3 className="mb-4">Technological University (Taunggyi)</h3>
         <p className="text-foreground/80">
           Bachelor of Engineering in Information Technology
         </p>

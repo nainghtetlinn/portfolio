@@ -35,7 +35,9 @@ export const Text = () => {
         className="mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl"
       >
         <span className="text-foreground">Hey, I&apos;m </span>
-        <p className="text-primary relative italic">Naing Htet Linn</p>
+        <span className="text-primary relative block italic">
+          Naing Htet Linn
+        </span>
       </motion.h1>
 
       {/* Description */}

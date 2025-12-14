@@ -41,9 +41,9 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
-          <CustomCursor />
           {children}
         </ThemeProvider>
+        <CustomCursor />
         <div className="fixed right-0 bottom-0 bg-blue-200 p-4">
           <span className="sm:hidden">xs</span>
           <span className="hidden sm:inline md:hidden">sm</span>

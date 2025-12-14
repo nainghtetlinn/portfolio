@@ -7,10 +7,10 @@ export const Education = () => {
         <div className="bg-secondary absolute top-0 left-0 h-2.5 w-2.5 -translate-1/2 rounded-full"></div>
 
         <h3 className="mb-4">Technological University (Taunggyi)</h3>
-        <p className="text-foreground/80">
+        <p className="text-muted-foreground">
           Bachelor of Engineering in Information Technology
         </p>
-        <p className="text-foreground/80 text-sm">2021 - Present</p>
+        <p className="text-muted-foreground text-sm">2021 - Present</p>
       </div>
     </section>
   );

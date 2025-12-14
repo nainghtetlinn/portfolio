@@ -4,6 +4,7 @@ import { orbitronSans, geistMono } from "@/assets/fonts";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -40,6 +41,7 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
+          <CustomCursor />
           {children}
         </ThemeProvider>
         <div className="fixed right-0 bottom-0 bg-blue-200 p-4">

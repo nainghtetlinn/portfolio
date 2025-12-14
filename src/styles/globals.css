@@ -15,6 +15,8 @@
 
   --accent: oklch(0.9219 0 0);
   --accent-foreground: oklch(0.3676 0.0205 64.1234);
+  --muted: oklch(0.9702 0 0);
+  --muted-foreground: oklch(0.5555 0 0);
 
   --border: oklch(0.3676 0.0205 64.1234);
   --radius: 1.25rem;
@@ -29,11 +31,13 @@
 
   --primary: oklch(0.705 0.213 47.604);
   --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.8 0 0);
-  --secondary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.2686 0 0);
+  --secondary-foreground: oklch(0.9461 0 0);
 
   --accent: oklch(0.25 0 0);
   --accent-foreground: oklch(0.92 0.005 64.1234);
+  --muted: oklch(0.2686 0 0);
+  --muted-foreground: oklch(0.7155 0 0);
 
   --border: oklch(0.4 0.005 64.1234);
   --radius: 1.25rem;
@@ -53,6 +57,8 @@
 
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 
   --color-border: var(--border);
 
@@ -120,5 +126,19 @@
   h2,
   h3 {
     @apply font-semibold;
+  }
+
+  /* Force hide default cursor on all elements */
+  html.hide-default-cursor,
+  html.hide-default-cursor *,
+  html.hide-default-cursor body,
+  html.hide-default-cursor a,
+  html.hide-default-cursor button,
+  html.hide-default-cursor input,
+  html.hide-default-cursor textarea,
+  html.hide-default-cursor select,
+  html.hide-default-cursor [role="button"],
+  html.hide-default-cursor [onclick] {
+    @apply cursor-none!;
   }
 }

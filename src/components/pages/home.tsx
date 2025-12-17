@@ -2,6 +2,7 @@ import { Navbar } from "../navbar";
 import { SectionSeperator } from "../section-seperator";
 import { AboutSection } from "./sections/about";
 import { HeroSection } from "./sections/hero";
+import { ProjectsSection } from "./sections/projects";
 
 export const HomePage = () => {
   return (
@@ -12,8 +13,9 @@ export const HomePage = () => {
       <SectionSeperator />
       <AboutSection />
       <SectionSeperator />
+      <ProjectsSection />
+      <SectionSeperator />
 
-      <div className="min-h-screen"></div>
       <div className="min-h-screen"></div>
     </main>
   );

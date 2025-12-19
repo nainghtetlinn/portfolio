@@ -25,7 +25,7 @@ export const Bio = () => {
       </article>
 
       <div className="flex items-center justify-center">
-        <Frame className="w-full max-w-[350px] p-2">
+        <Frame className="w-full max-w-80 p-2">
           <Lego className="aspect-square w-full" />
         </Frame>
       </div>

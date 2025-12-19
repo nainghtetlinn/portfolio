@@ -5,7 +5,7 @@ import { Text } from "./Text";
 
 export const HeroSection = () => {
   return (
-    <section className="relative z-0 overflow-hidden border-b pt-32">
+    <section id="home" className="relative z-0 overflow-hidden border-b pt-32">
       <Background />
 
       <main className="container mx-auto">

@@ -1,6 +1,5 @@
 import { Footer } from "../footer";
 import { Navbar } from "../navbar";
-import { SectionSeperator } from "../section-seperator";
 import { AboutSection } from "./sections/about";
 import { ContactSection } from "./sections/contact";
 import { HeroSection } from "./sections/hero";
@@ -12,11 +11,8 @@ export const HomePage = () => {
       <Navbar />
 
       <HeroSection />
-      <SectionSeperator />
       <AboutSection />
-      <SectionSeperator />
       <ProjectsSection />
-      <SectionSeperator />
       <ContactSection />
 
       <Footer />

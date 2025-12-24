@@ -8,8 +8,6 @@ export const ContactSection = () => {
   return (
     <section id="contact">
       <div className="relative z-0 border-t border-b">
-        <Background />
-
         <main className="relative container mx-auto min-h-[60vh] border-r border-l">
           <SectionLabel num="04." text="Contact" />
 
@@ -17,6 +15,8 @@ export const ContactSection = () => {
             <Article />
             <Contacts />
           </div>
+
+          <Background />
         </main>
       </div>
 

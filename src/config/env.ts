@@ -9,7 +9,7 @@ const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "production"]).default("development"),
     NEXT_RUNTIME: z.enum(["nodejs", "edge"]).default("nodejs"),
-    GITHUB_TOKEN: z.string().min(1),
+
   },
   /*
    * Environment variables available on the client (and server).
@@ -31,7 +31,6 @@ const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_RUNTIME: process.env.NEXT_RUNTIME,
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_GITHUB_USERNAME: process.env.NEXT_PUBLIC_GITHUB_USERNAME,
     NEXT_PUBLIC_AVAILABLE_STATUS: process.env.NEXT_PUBLIC_AVAILABLE_STATUS,

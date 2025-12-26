@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef } from "react";
 
 export const SectionLabel = ({ num, text }: { num: string; text: string }) => {
@@ -11,10 +11,35 @@ export const SectionLabel = ({ num, text }: { num: string; text: string }) => {
     offset: ["start end", "end start"],
   });
 
-  const leftX = useTransform(scrollYProgress, [0, 0.4], [-60, 0]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-  const rightX = useTransform(scrollYProgress, [0, 0.4], [60, 0]);
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  // Raw transforms
+  const rawLeftX = useTransform(scrollYProgress, [0, 0.4], [-60, 0]);
+  const rawLeftOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+
+  const rawRightX = useTransform(scrollYProgress, [0, 0.4], [60, 0]);
+  const rawBgOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+
+  // Spring smoothing
+  const leftX = useSpring(rawLeftX, {
+    stiffness: 80,
+    damping: 20,
+    mass: 0.6,
+  });
+
+  const rightX = useSpring(rawRightX, {
+    stiffness: 80,
+    damping: 20,
+    mass: 0.6,
+  });
+
+  const leftOpacity = useSpring(rawLeftOpacity, {
+    stiffness: 100,
+    damping: 30,
+  });
+
+  const bgOpacity = useSpring(rawBgOpacity, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   return (
     <div

@@ -46,6 +46,26 @@ const ProjectArticle = ({
     <article className="relative grid grid-cols-1 md:grid-cols-2">
       {/* Project Image */}
       <div className="bg-card relative flex items-center justify-center overflow-hidden p-4 md:border-r md:p-8 lg:p-12">
+        <div
+          className="absolute inset-0 dark:hidden"
+          style={{
+            backgroundImage: `
+        linear-gradient(to right, rgba(71, 61, 52, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(71, 61, 52, 0.2) 1px, transparent 1px)
+      `,
+            backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
+          }}
+        />
+        <div
+          className="absolute inset-0 hidden dark:block"
+          style={{
+            backgroundImage: `
+        linear-gradient(to right, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 1px, transparent 1px)
+      `,
+            backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
+          }}
+        />
         <div className="relative aspect-3/2 w-full max-w-md overflow-hidden border">
           <Image
             src={project.image}

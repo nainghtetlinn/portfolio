@@ -40,26 +40,12 @@ export const Profile = () => {
   return (
     <div className="relative overflow-hidden rounded-lg">
       <div className="aspect-square w-60 lg:w-72 xl:w-96">
-        <Image src={"/profile.png"} alt="my profile photo" fill />
+        <Image src={"/profile.jpg"} alt="my profile photo" fill />
       </div>
 
-      <div className="absolute top-12 left-5 lg:top-16 lg:left-6 xl:top-24 xl:left-8">
-        <span className="-mb-2 -ml-2.5 block w-fit -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-black shadow xl:mb-0">
-          Focus
-        </span>
-        <ArrowIcon className="w-12 rotate-180 lg:w-16 xl:w-20" />
-      </div>
-
-      <div className="absolute top-26 right-1 lg:top-32 lg:right-4 xl:top-42 xl:right-8">
-        <span className="-mb-3 -ml-3 block w-fit -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-black shadow lg:-mb-2 xl:mb-0 xl:ml-2">
-          Resilience
-        </span>
-        <ArrowIcon className="w-12 scale-x-[-1] -rotate-180 lg:w-16 xl:w-20" />
-      </div>
-
-      <div className="absolute top-8 right-2 lg:top-12 lg:right-6 xl:top-20 xl:right-10">
-        <span className="-mb-2 ml-5 block w-fit -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-black shadow xl:mb-0 xl:ml-8">
-          Vision
+      <div className="absolute top-16 right-4 md:right-4 lg:top-20 lg:right-10 xl:top-34 xl:right-8">
+        <span className="-mb-3 ml-3 block w-20 -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-wrap text-black shadow lg:-mb-2 xl:mb-0 xl:ml-2 xl:w-fit">
+          Developer Hoodie
         </span>
         <ArrowIcon className="w-12 scale-x-[-1] -rotate-180 lg:w-16 xl:w-20" />
       </div>

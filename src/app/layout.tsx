@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { CustomCursor } from "@/components/ui/custom-cursor";
+import env from "@/config/env";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -44,13 +45,15 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <CustomCursor />
-        <div className="fixed right-0 bottom-0 bg-blue-200 p-4">
-          <span className="sm:hidden">xs</span>
-          <span className="hidden sm:inline md:hidden">sm</span>
-          <span className="hidden md:inline lg:hidden">md</span>
-          <span className="hidden lg:inline xl:hidden">lg</span>
-          <span className="hidden xl:inline">xl</span>
-        </div>
+        {env.NODE_ENV === "development" && (
+          <div className="fixed right-0 bottom-0 bg-blue-200 p-4">
+            <span className="sm:hidden">xs</span>
+            <span className="hidden sm:inline md:hidden">sm</span>
+            <span className="hidden md:inline lg:hidden">md</span>
+            <span className="hidden lg:inline xl:hidden">lg</span>
+            <span className="hidden xl:inline">xl</span>
+          </div>
+        )}
       </body>
     </html>
   );

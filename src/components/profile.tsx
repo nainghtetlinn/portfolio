@@ -39,7 +39,7 @@ export const ArrowIcon: React.FC<{ className?: string }> = ({ className }) => {
 export const Profile = () => {
   return (
     <div className="relative overflow-hidden rounded-lg">
-      <div className="aspect-square w-60 lg:w-72 xl:w-96">
+      <div className="aspect-square w-68 lg:w-78 xl:w-96">
         <Image src={"/profile.jpg"} alt="my profile photo" fill />
       </div>
 

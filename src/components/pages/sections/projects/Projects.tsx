@@ -6,6 +6,7 @@ import { Link2 } from "lucide-react";
 import { motion, useScroll } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
+import { Background } from "./Background";
 import { PROJECTS } from "./data";
 
 export const Projects = () => {
@@ -43,30 +44,11 @@ const ProjectArticle = ({
   const buttonsMotion = useRolling(scrollYProgress, 0);
 
   return (
-    <article className="relative grid grid-cols-1 md:grid-cols-2">
+    <article className="relative grid grid-cols-1 lg:grid-cols-2">
       {/* Project Image */}
-      <div className="bg-card relative flex items-center justify-center overflow-hidden p-4 md:border-r md:p-8 lg:p-12">
-        <div
-          className="absolute inset-0 dark:hidden"
-          style={{
-            backgroundImage: `
-        linear-gradient(to right, rgba(71, 61, 52, 0.2) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(71, 61, 52, 0.2) 1px, transparent 1px)
-      `,
-            backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
-          }}
-        />
-        <div
-          className="absolute inset-0 hidden dark:block"
-          style={{
-            backgroundImage: `
-        linear-gradient(to right, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 1px, transparent 1px)
-      `,
-            backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
-          }}
-        />
-        <div className="relative aspect-3/2 w-full max-w-md overflow-hidden border">
+      <div className="bg-card relative z-0 flex items-center justify-center overflow-hidden p-8 lg:border-r lg:p-12 xl:p-20">
+        <Background />
+        <div className="relative aspect-3/2 w-full max-w-md overflow-hidden border shadow-2xl/40">
           <Image
             src={project.image}
             alt={project.name}

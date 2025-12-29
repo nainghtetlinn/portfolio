@@ -43,7 +43,7 @@ export const Profile = () => {
         <Image src={"/profile.jpg"} alt="my profile photo" fill />
       </div>
 
-      <div className="absolute top-16 right-4 md:right-4 lg:top-20 lg:right-10 xl:top-34 xl:right-8">
+      <div className="absolute top-20 right-6 md:right-5 lg:top-24 lg:right-12 xl:top-34 xl:right-8">
         <span className="-mb-3 ml-3 block w-20 -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-wrap text-black shadow lg:-mb-2 xl:mb-0 xl:ml-2 xl:w-fit">
           Developer Hoodie
         </span>

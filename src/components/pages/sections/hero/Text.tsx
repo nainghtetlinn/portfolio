@@ -73,21 +73,21 @@ export const Text = () => {
         transition={{ duration: 0.6, delay: 0.5 }}
         className="mt-5 flex flex-col items-center gap-4 max-md:mx-auto max-md:justify-center sm:flex-row"
       >
-        <Button asChild size="lg" className="group/btn border-2 font-medium">
+        <Button asChild size="lg" className="rounded-full border-2 font-medium">
           <a href={"#contact"}>
             Lets Connect
-            <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            <ArrowUpRight className="size-4" />
           </a>
         </Button>
         <Button
           asChild
           variant="outline"
           size="lg"
-          className="group/btn border-2 font-medium"
+          className="rounded-full border-2 font-medium"
         >
           <Link href={"/resume.pdf"}>
-            <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
             Download resume
+            <Download className="size-4" />
           </Link>
         </Button>
       </motion.div>

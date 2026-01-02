@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useRolling } from "@/hooks/use-rolling";
 import { Link2 } from "lucide-react";
@@ -69,12 +70,13 @@ const ProjectArticle = ({
         </motion.p>
         <motion.div style={{ ...tagsMotion }} className="flex gap-2">
           {project.techs.map((tech) => (
-            <span
+            <Badge
               key={tech}
-              className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 font-mono text-xs md:text-sm"
+              variant={"secondary"}
+              className="font-mono text-xs md:text-sm"
             >
               {tech}
-            </span>
+            </Badge>
           ))}
         </motion.div>
         <motion.div style={{ ...buttonsMotion }} className="space-x-4">

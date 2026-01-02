@@ -1,4 +1,5 @@
 import StackIcon from "tech-stack-icons";
+import { Badge } from "@/components/ui/badge";
 
 const SKILLS = [
   {
@@ -56,15 +57,16 @@ export const Skills = () => {
             <h3>{skill.label}</h3>
             <div className="flex flex-wrap gap-2">
               {skill.items.map((item) => (
-                <span
+                <Badge
                   key={item.name}
-                  className="bg-secondary text-secondary-foreground inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold lg:text-base"
+                  variant={"secondary"}
+                  className="gap-2 px-4 py-2 text-sm font-semibold lg:text-base"
                 >
                   {item.icon && (
                     <StackIcon name={item.icon} className="size-5 lg:size-6" />
                   )}
                   {item.name}
-                </span>
+                </Badge>
               ))}
             </div>
           </div>

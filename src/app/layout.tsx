@@ -1,11 +1,17 @@
 import "../styles/globals.css";
+
 import type { Metadata } from "next";
-import { orbitronSans, geistMono } from "@/assets/fonts";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/providers/theme-provider";
-import { CustomCursor } from "@/components/ui/custom-cursor";
+import Script from "next/script";
+
+import { geistMono, orbitronSans } from "@/assets/fonts";
+
 import env from "@/config/env";
+import { siteConfig } from "@/config/site";
+
+import { cn } from "@/lib/utils";
+
+import { CustomCursor } from "@/components/ui/custom-cursor";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -45,6 +51,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <CustomCursor />
+
         {env.NODE_ENV === "development" && (
           <div className="fixed right-0 bottom-0 bg-blue-200 p-4">
             <span className="sm:hidden">xs</span>
@@ -54,6 +61,12 @@ export default function RootLayout({
             <span className="hidden xl:inline">xl</span>
           </div>
         )}
+
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+        ></Script>
       </body>
     </html>
   );

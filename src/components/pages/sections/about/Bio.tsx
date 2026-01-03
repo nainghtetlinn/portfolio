@@ -1,5 +1,5 @@
 import { Frame } from "@/components/frame";
-import { Lego } from "./lego";
+import Image from "next/image";
 
 export const Bio = () => {
   return (
@@ -24,9 +24,9 @@ export const Bio = () => {
         </p>
       </article>
 
-      <div className="flex items-center justify-center">
-        <Frame className="w-full max-w-80 p-2">
-          <Lego className="aspect-square w-full" />
+      <div className="mt-4 flex items-center justify-center p-4 lg:mt-0">
+        <Frame className="relative aspect-square w-68 lg:w-78">
+          <Image src={"/bio_photo.png"} alt="low poly photo of me" fill />
         </Frame>
       </div>
     </section>

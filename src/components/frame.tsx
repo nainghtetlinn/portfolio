@@ -7,8 +7,8 @@ export const Frame = ({
 }: PropsWithChildren & { className?: string }) => {
   return (
     <div className={cn("relative", className)}>
-      <div className="relative">
-        <div className="absolute inset-0">
+      <div className="relative h-full w-full p-px">
+        <div className="absolute inset-0 z-30">
           <svg
             className="h-full w-full"
             viewBox="0 0 250 250"
@@ -16,8 +16,12 @@ export const Frame = ({
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              d="M149.5 234.5L164.5 249.5H0.5V165.5L15.5 180.5V234.5H149.5Z"
+              className="fill-background stroke-background"
+            />
+            <path
               d="M87.5 0.5H15.5L0.5 15.5V165.5L8 173L15.5 180.5V234.5H149.5L164.5 249.5H234.5L249.5 234.5V15.5H102.5L87.5 0.5Z"
-              className="stroke-card-foreground fill-card dark:fill-stone-700"
+              className="stroke-card-foreground"
             />
             <path
               d="M92.5 0.5L104.5 12.5H177.5L165.5 0.5H92.5Z"
@@ -71,7 +75,22 @@ export const Frame = ({
             />
           </svg>
         </div>
-        <div className="p-5">{children}</div>
+        <div className="relative z-20 h-full w-full overflow-hidden">
+          {children}
+        </div>
+        <div className="absolute inset-0 z-10">
+          <svg
+            className="h-full w-full"
+            viewBox="0 0 250 250"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M87.5 0.5H15.5L0.5 15.5V165.5L8 173L15.5 180.5V234.5H149.5L164.5 249.5H234.5L249.5 234.5V15.5H102.5L87.5 0.5Z"
+              className="fill-card"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );

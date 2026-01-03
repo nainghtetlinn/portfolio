@@ -46,7 +46,7 @@ export const Photo = () => {
       transition={{ duration: 0.6, delay: 0.2 }}
       className="relative"
     >
-      <div className="relative overflow-hidden rounded-lg shadow-2xl">
+      <div className="relative overflow-hidden rounded-lg">
         <div className="aspect-square w-68 lg:w-78 xl:w-96">
           <Image src={"/profile.jpg"} alt="my profile photo" fill />
         </div>

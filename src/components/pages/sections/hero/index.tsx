@@ -7,11 +7,11 @@ import { Text } from "./Text";
 export const HeroSection = () => {
   return (
     <section id="home">
-      <div className="relative z-0 overflow-hidden border-b pt-32">
+      <div className="relative z-0 overflow-hidden border-b pt-20 md:pt-26">
         <Background />
 
         <main className="container mx-auto">
-          <div className="flex flex-col items-center gap-6 px-4 py-6 text-center md:flex-row md:px-8 md:pb-14 md:text-left lg:gap-12 lg:px-20">
+          <div className="flex flex-col items-center gap-8 px-4 py-6 text-center md:flex-row md:px-8 md:pb-14 md:text-left lg:gap-12 lg:px-20">
             <Photo />
             <Text />
           </div>

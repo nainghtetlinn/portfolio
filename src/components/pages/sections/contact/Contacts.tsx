@@ -5,7 +5,10 @@ export const Contacts = () => {
     <section>
       <p className="mb-4">{siteConfig.email}</p>
       <div className="flex items-center gap-4 md:gap-8">
-        <a href={siteConfig.github}>
+        <a
+          href={siteConfig.github}
+          className="hover:text-primary transition-all duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -22,7 +25,10 @@ export const Contacts = () => {
             <path d="M9 18c-4.51 2-5-2-7-2" />
           </svg>
         </a>
-        <a href={siteConfig.twitter}>
+        <a
+          href={siteConfig.twitter}
+          className="hover:text-primary transition-all duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -38,7 +44,10 @@ export const Contacts = () => {
             <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
           </svg>
         </a>
-        <a href={siteConfig.linkedin}>
+        <a
+          href={siteConfig.linkedin}
+          className="hover:text-primary transition-all duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -56,7 +65,10 @@ export const Contacts = () => {
             <circle cx="4" cy="4" r="2" />
           </svg>
         </a>
-        <a href={"mailto:" + siteConfig.email}>
+        <a
+          href={"mailto:" + siteConfig.email}
+          className="hover:text-primary transition-all duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

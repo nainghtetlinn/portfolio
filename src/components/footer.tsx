@@ -17,17 +17,37 @@ export const Footer = () => {
             Contact
           </h6>
           <ul className="text-sm md:text-base">
-            <li className="hover:text-primary transition-all duration-300">
-              <a href={siteConfig.github}>Github</a>
+            <li>
+              <a
+                href={siteConfig.github}
+                className="hover:text-primary transition-all duration-300"
+              >
+                Github
+              </a>
             </li>
-            <li className="hover:text-primary transition-all duration-300">
-              <a href={siteConfig.twitter}>X</a>
+            <li>
+              <a
+                href={siteConfig.twitter}
+                className="hover:text-primary transition-all duration-300"
+              >
+                X
+              </a>
             </li>
-            <li className="hover:text-primary transition-all duration-300">
-              <a href={siteConfig.linkedin}>LinkedIn</a>
+            <li>
+              <a
+                href={siteConfig.linkedin}
+                className="hover:text-primary transition-all duration-300"
+              >
+                LinkedIn
+              </a>
             </li>
-            <li className="hover:text-primary transition-all duration-300">
-              <a href={siteConfig.telegram}>Telegram</a>
+            <li>
+              <a
+                href={siteConfig.telegram}
+                className="hover:text-primary transition-all duration-300"
+              >
+                Telegram
+              </a>
             </li>
           </ul>
         </aside>
@@ -37,17 +57,37 @@ export const Footer = () => {
             Navigation
           </h6>
           <ul className="text-sm md:text-base">
-            <li className="hover:text-primary transition-all duration-300">
-              <a href="#home">Home</a>
+            <li>
+              <a
+                href="#home"
+                className="hover:text-primary transition-all duration-300"
+              >
+                Home
+              </a>
             </li>
-            <li className="hover:text-primary transition-all duration-300">
-              <a href="#about">About</a>
+            <li>
+              <a
+                href="#about"
+                className="hover:text-primary transition-all duration-300"
+              >
+                About
+              </a>
             </li>
-            <li className="hover:text-primary transition-all duration-300">
-              <a href="#projects">Projects</a>
+            <li>
+              <a
+                href="#projects"
+                className="hover:text-primary transition-all duration-300"
+              >
+                Projects
+              </a>
             </li>
-            <li className="hover:text-primary transition-all duration-300">
-              <a href="#contact">Contact</a>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-primary transition-all duration-300"
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </aside>

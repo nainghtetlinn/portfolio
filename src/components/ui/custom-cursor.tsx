@@ -142,7 +142,7 @@ const CursorInner = ({
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-22092002 h-20 w-20 rounded-full bg-white mix-blend-difference backdrop-blur-sm will-change-transform"
+      className="pointer-events-none fixed top-0 left-0 z-22092002 h-16 w-16 rounded-full bg-white mix-blend-difference backdrop-blur-sm will-change-transform"
       style={{
         x: cursorX,
         y: cursorY,
@@ -150,7 +150,7 @@ const CursorInner = ({
       initial={{ opacity: 0, scale: 0.2 }}
       animate={{
         opacity: 1,
-        scale: isHovering ? 1 : 0.4,
+        scale: isHovering ? 1 : 0.5,
       }}
       exit={{ opacity: 0, scale: 0 }}
       transition={{

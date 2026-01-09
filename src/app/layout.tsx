@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "nextjs",
     "reactjs",
   ],
+
   openGraph: {
     images: [
       {
@@ -34,6 +35,9 @@ export const metadata: Metadata = {
         alt: "Naing's Portfolio",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

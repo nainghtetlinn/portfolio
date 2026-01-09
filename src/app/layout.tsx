@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     "nextjs",
     "reactjs",
   ],
+  openGraph: {
+    images: [
+      {
+        url: "/portfolio_screenshot.png",
+        alt: "Naing's Portfolio",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

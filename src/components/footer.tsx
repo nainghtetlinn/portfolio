@@ -12,7 +12,7 @@ export const Footer = () => {
           </p>
         </div>
 
-        <div className="flex w-full justify-between md:w-1/3">
+        <div className="grid w-full grid-cols-2 md:w-1/3">
           <aside>
             <h6 className="text-secondary-foreground/70 mb-2 font-sans font-medium">
               Contact

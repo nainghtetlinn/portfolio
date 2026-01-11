@@ -21,6 +21,7 @@ export const Footer = () => {
               <li>
                 <a
                   href={siteConfig.github}
+                  target="_blank"
                   className="hover:text-primary transition-all duration-300"
                 >
                   Github
@@ -29,6 +30,7 @@ export const Footer = () => {
               <li>
                 <a
                   href={siteConfig.twitter}
+                  target="_blank"
                   className="hover:text-primary transition-all duration-300"
                 >
                   X
@@ -37,6 +39,7 @@ export const Footer = () => {
               <li>
                 <a
                   href={siteConfig.linkedin}
+                  target="_blank"
                   className="hover:text-primary transition-all duration-300"
                 >
                   LinkedIn
@@ -45,6 +48,7 @@ export const Footer = () => {
               <li>
                 <a
                   href={siteConfig.telegram}
+                  target="_blank"
                   className="hover:text-primary transition-all duration-300"
                 >
                   Telegram

@@ -15,7 +15,9 @@ export const ProjectsSection = () => {
 
           <div className="flex h-32 items-center justify-center border-t">
             <Button variant={"ghost"} asChild className="uppercase">
-              <a href={siteConfig.github}>view all projects on github</a>
+              <a href={siteConfig.github} target="_blank">
+                view all projects on github
+              </a>
             </Button>
           </div>
         </main>

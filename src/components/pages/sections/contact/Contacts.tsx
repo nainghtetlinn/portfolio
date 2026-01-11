@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { Send } from "lucide-react";
 
 export const Contacts = () => {
   return (
@@ -124,6 +125,23 @@ export const Contacts = () => {
               <h6 className="font-semibold">LinkedIn</h6>
               <span className="text-muted-foreground font-mono underline">
                 naingdev
+              </span>
+            </div>
+          </a>
+        </li>
+        <li className="flex">
+          <a
+            href={siteConfig.telegram}
+            target="_blank"
+            className="flex items-center gap-4 md:gap-6"
+          >
+            <div>
+              <Send className="size-6 md:size-7" />
+            </div>
+            <div>
+              <h6 className="font-semibold">Telegram</h6>
+              <span className="text-muted-foreground font-mono underline">
+                naing_hl
               </span>
             </div>
           </a>

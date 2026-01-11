@@ -7,6 +7,7 @@ export const Contacts = () => {
         <li className="flex">
           <a
             href={"mailto:" + siteConfig.email}
+            target="_blank"
             className="flex items-center gap-4 md:gap-6"
           >
             <div>
@@ -37,6 +38,7 @@ export const Contacts = () => {
         <li className="flex">
           <a
             href={siteConfig.github}
+            target="_blank"
             className="flex items-center gap-4 md:gap-6"
           >
             <div>
@@ -67,6 +69,7 @@ export const Contacts = () => {
         <li className="flex">
           <a
             href={siteConfig.twitter}
+            target="_blank"
             className="flex items-center gap-4 md:gap-6"
           >
             <div>
@@ -96,6 +99,7 @@ export const Contacts = () => {
         <li className="flex">
           <a
             href={siteConfig.linkedin}
+            target="_blank"
             className="flex items-center gap-4 md:gap-6"
           >
             <div>

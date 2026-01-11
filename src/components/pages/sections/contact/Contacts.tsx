@@ -28,7 +28,7 @@ export const Contacts = () => {
             </div>
             <div>
               <h6 className="font-semibold">Email</h6>
-              <span className="text-muted-foreground font-mono">
+              <span className="text-muted-foreground font-mono underline">
                 {siteConfig.email}
               </span>
             </div>
@@ -58,7 +58,7 @@ export const Contacts = () => {
             </div>
             <div>
               <h6 className="font-semibold">Github</h6>
-              <span className="text-muted-foreground font-mono">
+              <span className="text-muted-foreground font-mono underline">
                 nainghtetlinn
               </span>
             </div>
@@ -87,7 +87,9 @@ export const Contacts = () => {
             </div>
             <div>
               <h6 className="font-semibold">X</h6>
-              <span className="text-muted-foreground font-mono">naingdev</span>
+              <span className="text-muted-foreground font-mono underline">
+                naingdev
+              </span>
             </div>
           </a>
         </li>
@@ -116,7 +118,9 @@ export const Contacts = () => {
             </div>
             <div>
               <h6 className="font-semibold">LinkedIn</h6>
-              <span className="text-muted-foreground font-mono">naingdev</span>
+              <span className="text-muted-foreground font-mono underline">
+                naingdev
+              </span>
             </div>
           </a>
         </li>

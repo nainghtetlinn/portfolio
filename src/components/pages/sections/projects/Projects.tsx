@@ -1,12 +1,8 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useRolling } from "@/hooks/use-rolling";
 import { Link2 } from "lucide-react";
-import { motion, useScroll } from "motion/react";
 import Image from "next/image";
-import { useRef } from "react";
 import { Background } from "./Background";
 import { PROJECTS } from "./data";
 
@@ -26,30 +22,17 @@ const ProjectArticle = ({
   project: {
     name: string;
     description: string;
-    techs: string[];
     image: string;
     github: string;
     url: string;
   };
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "center center"],
-  });
-
-  const titleMotion = useRolling(scrollYProgress, 0.3);
-  const textMotion = useRolling(scrollYProgress, 0.2);
-  const tagsMotion = useRolling(scrollYProgress, 0.1);
-  const buttonsMotion = useRolling(scrollYProgress, 0);
-
   return (
     <article className="relative grid grid-cols-1 lg:grid-cols-2">
       {/* Project Image */}
       <div className="bg-card relative z-0 flex items-center justify-center overflow-hidden p-8 lg:border-r lg:p-12 xl:p-20">
         <Background />
-        <div className="relative aspect-3/2 w-full max-w-md overflow-hidden border shadow-2xl/40">
+        <div className="relative aspect-video w-full max-w-md overflow-hidden border shadow-2xl/40">
           <Image
             src={project.image}
             alt={project.name}
@@ -60,27 +43,11 @@ const ProjectArticle = ({
       </div>
 
       {/* Project Text */}
-      <div
-        ref={ref}
-        className="flex flex-col justify-center space-y-6 p-4 pb-8 md:p-8"
-      >
-        <motion.h2 style={{ ...titleMotion }}>{project.name}</motion.h2>
-        <motion.p style={{ ...textMotion }} className="font-mono">
-          {project.description}
-        </motion.p>
-        <motion.div style={{ ...tagsMotion }} className="flex gap-2">
-          {project.techs.map((tech) => (
-            <Badge
-              key={tech}
-              variant={"secondary"}
-              className="font-mono text-xs md:text-sm"
-            >
-              {tech}
-            </Badge>
-          ))}
-        </motion.div>
-        <motion.div style={{ ...buttonsMotion }} className="space-x-4">
-          <Button asChild>
+      <div className="flex flex-col justify-center p-4 pb-8 md:p-8">
+        <h2>{project.name}</h2>
+        <p className="mt-4 font-mono">{project.description}</p>
+        <div className="mt-8 space-x-4">
+          <Button asChild className="border-2">
             <a href={project.github} target="_blank">
               View Code
               <svg
@@ -100,13 +67,13 @@ const ProjectArticle = ({
               </svg>
             </a>
           </Button>
-          <Button variant={"outline"} asChild>
+          <Button variant={"outline"} asChild className="border-2">
             <a href={project.url} target="_blank">
               Live Demo
               <Link2 />
             </a>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </article>
   );

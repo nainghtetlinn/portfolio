@@ -14,9 +14,11 @@ export const ProjectsSection = () => {
           <Projects />
 
           <div className="flex h-32 items-center justify-center border-t">
-            <Button variant={"ghost"} asChild className="uppercase">
+            <Button variant={"ghost"} asChild className="font-mono uppercase">
               <a href={siteConfig.github} target="_blank">
+                <span className="bg-foreground/40 mr-2 inline-block h-px w-8"></span>
                 view all projects on github
+                <span className="bg-foreground/40 ml-2 inline-block h-px w-8"></span>
               </a>
             </Button>
           </div>

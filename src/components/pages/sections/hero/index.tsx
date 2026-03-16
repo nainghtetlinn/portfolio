@@ -1,4 +1,3 @@
-import { SectionSeperator } from "@/components/section-seperator";
 import { Background } from "./Background";
 import { Photo } from "./Photo";
 import { Stats } from "./Stats";
@@ -6,7 +5,7 @@ import { Text } from "./Text";
 
 export const HeroSection = () => {
   return (
-    <section id="home">
+    <section id="home" className="snap-start">
       <div className="relative z-0 overflow-hidden border-b pt-20 md:pt-26">
         <Background />
 
@@ -19,8 +18,6 @@ export const HeroSection = () => {
           <Stats />
         </main>
       </div>
-
-      <SectionSeperator />
     </section>
   );
 };

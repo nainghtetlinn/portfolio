@@ -7,6 +7,8 @@ import { Skills } from "./Skills";
 export const AboutSection = () => {
   return (
     <section id="about">
+      <SectionSeperator className="snap-start" />
+
       <div className="border-t border-b">
         <main className="relative container mx-auto border-r border-l">
           <SectionLabel num="02." text="About Me" />
@@ -18,8 +20,6 @@ export const AboutSection = () => {
           </div>
         </main>
       </div>
-
-      <SectionSeperator />
     </section>
   );
 };

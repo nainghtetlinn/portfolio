@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 export const ProjectsSection = () => {
   return (
     <section id="projects">
+      <SectionSeperator className="snap-start" />
+
       <div className="border-t border-b">
         <main className="relative container mx-auto border-r border-l">
           <SectionLabel num="03." text="Projects" />
@@ -24,8 +26,6 @@ export const ProjectsSection = () => {
           </div>
         </main>
       </div>
-
-      <SectionSeperator />
     </section>
   );
 };

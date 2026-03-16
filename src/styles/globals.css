@@ -76,6 +76,10 @@
     @apply border-border/40 scroll-smooth;
   }
 
+  html {
+    @apply h-screen snap-y overflow-y-scroll scroll-smooth;
+  }
+
   html,
   body {
     @apply size-full;

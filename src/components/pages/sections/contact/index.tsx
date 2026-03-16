@@ -7,6 +7,8 @@ import { Contacts } from "./Contacts";
 export const ContactSection = () => {
   return (
     <section id="contact">
+      <SectionSeperator className="snap-start" />
+
       <div className="relative z-0 border-t border-b">
         <main className="relative container mx-auto min-h-96 border-r border-l lg:min-h-120">
           <SectionLabel num="04." text="Contact" />

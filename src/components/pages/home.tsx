@@ -7,15 +7,13 @@ import { ProjectsSection } from "./sections/projects";
 
 export const HomePage = () => {
   return (
-    <main className="bg-background relative min-h-screen overflow-hidden">
+    <>
       <Navbar />
-
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-
       <Footer />
-    </main>
+    </>
   );
 };

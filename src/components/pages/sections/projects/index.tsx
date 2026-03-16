@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects">
+    <section id="projects" className="bg-background relative">
       <SectionSeperator className="snap-start" />
 
       <div className="border-t border-b">

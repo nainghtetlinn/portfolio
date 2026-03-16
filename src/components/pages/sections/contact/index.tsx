@@ -6,7 +6,7 @@ import { Contacts } from "./Contacts";
 
 export const ContactSection = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="bg-background relative">
       <SectionSeperator className="snap-start" />
 
       <div className="relative z-0 border-t border-b">

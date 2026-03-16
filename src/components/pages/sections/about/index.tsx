@@ -6,7 +6,7 @@ import { Skills } from "./Skills";
 
 export const AboutSection = () => {
   return (
-    <section id="about">
+    <section id="about" className="bg-background relative">
       <SectionSeperator className="snap-start" />
 
       <div className="border-t border-b">

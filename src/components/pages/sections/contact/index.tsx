@@ -7,10 +7,10 @@ import { Contacts } from "./Contacts";
 export const ContactSection = () => {
   return (
     <section id="contact" className="bg-background relative">
-      <SectionSeperator className="snap-start" />
+      <SectionSeperator />
 
       <div className="relative z-0 border-t border-b">
-        <main className="relative container mx-auto min-h-96 border-r border-l lg:min-h-120">
+        <main className="relative container mx-auto min-h-[80vh] border-r border-l">
           <SectionLabel num="04." text="Contact" />
 
           <div className="relative space-y-6 px-4 md:px-8">

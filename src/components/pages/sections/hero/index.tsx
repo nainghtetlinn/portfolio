@@ -1,18 +1,19 @@
 "use client";
 
+import { useParallex } from "@/hooks/use-parallex";
+import { motion, useScroll } from "motion/react";
 import { useRef } from "react";
 import { Background } from "./Background";
 import { Photo } from "./Photo";
 import { Stats } from "./Stats";
 import { Text } from "./Text";
-import { motion, useScroll } from "motion/react";
-import { useParallex } from "@/hooks/use-parallex";
 
 export const HeroSection = () => {
   const ref = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["end 75%", "end start"],
   });
   const y = useParallex(scrollYProgress, 300);
 

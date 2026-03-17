@@ -77,7 +77,7 @@
   }
 
   html {
-    @apply h-screen snap-y overflow-y-scroll scroll-smooth;
+    @apply h-screen snap-y overflow-x-hidden overflow-y-scroll scroll-smooth;
   }
 
   html,

@@ -8,6 +8,14 @@ export const PROJECTS = [
     url: "https://naingcn.vercel.app/",
   },
   {
+    name: "Talkichat",
+    description:
+      "TalkiChat is a full-stack real-time messaging application that delivers low-latency communication using WebSockets (Socket.IO). It includes secure user authentication, chat persistence, and a responsive UI, demonstrating end-to-end application development and scalable system design.",
+    image: "/projects/talkichat.png",
+    github: "https://github.com/nainghtetlinn/project-talkichat/",
+    url: "https://talkichat.netlify.app/",
+  },
+  {
     name: "Invitation Generator",
     description:
       "A web-based application that allows users to quickly create university invitations for all majors and departments with just one-click.",

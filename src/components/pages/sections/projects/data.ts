@@ -8,12 +8,20 @@ export const PROJECTS = [
     url: "https://naingcn.vercel.app/",
   },
   {
-    name: "Talkichat",
+    name: "Talkichat (Legacy Project)",
     description:
       "TalkiChat is a full-stack real-time messaging application that delivers low-latency communication using WebSockets (Socket.IO). It includes secure user authentication, chat persistence, and a responsive UI, demonstrating end-to-end application development and scalable system design.",
     image: "/projects/talkichat.png",
     github: "https://github.com/nainghtetlinn/project-talkichat/",
     url: "https://talkichat.netlify.app/",
+  },
+  {
+    name: "Movie Booking System (Legacy Project)",
+    description:
+      "Movie Booking System is a role-based full-stack application supporting Admin, Staff, and User functionalities. It features secure authentication, movie and showtime management, and a complete ticket booking workflow, showcasing structured system design and efficient role-based access control.",
+    image: "/projects/moviebookingsystem.png",
+    github: "https://github.com/nainghtetlinn/movie-booking-system",
+    url: "https://moviebookingsystem.vercel.app/",
   },
   {
     name: "Invitation Generator",

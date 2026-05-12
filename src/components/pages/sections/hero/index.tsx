@@ -13,12 +13,12 @@ export const HeroSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end 75%", "end start"],
+    offset: ["end 50%", "end start"],
   });
-  const y = useParallex(scrollYProgress, 300);
+  const y = useParallex(scrollYProgress, 180);
 
   return (
-    <section ref={ref} id="home" className="snap-start">
+    <section ref={ref} id="home">
       <div className="relative z-0 overflow-hidden border-b pt-20 md:pt-26">
         <Background />
 

@@ -14,16 +14,12 @@ export const ProjectsSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end 75%", "end start"],
+    offset: ["end 50%", "end start"],
   });
-  const y = useParallex(scrollYProgress, 300);
+  const y = useParallex(scrollYProgress, 180);
 
   return (
-    <section
-      ref={ref}
-      id="projects"
-      className="bg-background relative snap-start"
-    >
+    <section ref={ref} id="projects" className="bg-background relative">
       <SectionSeperator />
 
       <div className="relative border-t border-b">

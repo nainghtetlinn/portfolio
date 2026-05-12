@@ -79,7 +79,7 @@ export const Navbar = () => {
               {/* Github */}
               <a
                 href={siteConfig.github}
-                className="hover:text-primary transition-all duration-300"
+                className="hover:text-primary py-4 transition-all duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -103,16 +103,16 @@ export const Navbar = () => {
                 onClick={() =>
                   setTheme(resolvedTheme === "dark" ? "light" : "dark")
                 }
-                className="hover:text-primary cursor-pointer transition-transform duration-300"
+                className="hover:text-primary cursor-pointer py-4 transition-transform duration-300"
                 aria-label="Toggle theme"
               >
-                <ThemeToggleBtn className="size-6" theme={resolvedTheme} />
+                <ThemeToggleBtn className="size-7" theme={resolvedTheme} />
               </button>
 
               {/* Menu Toggle */}
               <button
                 onClick={() => setOpen((s) => !s)}
-                className="hover:text-primary cursor-pointer transition-transform duration-300 md:hidden"
+                className="hover:text-primary cursor-pointer py-4 transition-transform duration-300 md:hidden"
                 aria-label="Toggle menu"
               >
                 <AnimatePresence mode="wait" initial={false}>

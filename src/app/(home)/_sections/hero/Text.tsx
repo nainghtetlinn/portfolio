@@ -115,7 +115,7 @@ export const Text = () => {
           size="lg"
           className="rounded-full border-2 font-medium"
         >
-          <Link href={"/resume.pdf"}>
+          <Link href={"/resume.pdf"} prefetch={false}>
             Download resume
             <Download className="size-4" />
           </Link>

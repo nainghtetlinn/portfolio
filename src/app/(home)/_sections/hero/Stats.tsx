@@ -26,7 +26,7 @@ export const Stats = () => {
             <div className="text-foreground mb-2 text-3xl font-bold">
               <CountUp from={0} to={stat.value} />+
             </div>
-            <div className="text-foreground/50 font-mono text-xs tracking-wider uppercase">
+            <div className="text-foreground font-mono text-xs tracking-wider uppercase">
               {stat.label}
             </div>
           </div>

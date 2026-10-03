@@ -64,7 +64,7 @@ export const Navbar = () => {
             </a>
 
             {/* Nav links */}
-            <ul className="hidden items-center gap-2 md:flex">
+            <ul className="hidden items-center gap-6 md:flex">
               {NAV_LINKS.map((l) => (
                 <li
                   key={l.id}
@@ -75,7 +75,7 @@ export const Navbar = () => {
               ))}
             </ul>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
               {/* Github */}
               <a
                 href={siteConfig.github}

@@ -17,7 +17,7 @@ export const Footer = () => {
             <h6 className="text-secondary-foreground/70 mb-2 font-sans font-medium">
               Contact
             </h6>
-            <ul className="text-sm md:text-base">
+            <ul className="space-y-2 text-sm md:text-base">
               <li>
                 <a
                   href={siteConfig.github}
@@ -61,7 +61,7 @@ export const Footer = () => {
             <h6 className="text-secondary-foreground/70 mb-2 font-sans font-medium">
               Navigation
             </h6>
-            <ul className="text-sm md:text-base">
+            <ul className="space-y-2 text-sm md:text-base">
               <li>
                 <a
                   href="#home"

@@ -37,7 +37,9 @@ const ProjectArticle = ({
             src={project.image}
             alt={project.name}
             fill
+            sizes="(max-width: 448px) 100vw, 448px"
             className="object-cover object-top-left"
+            loading="lazy"
           />
         </div>
       </div>

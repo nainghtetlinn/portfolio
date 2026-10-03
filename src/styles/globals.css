@@ -73,7 +73,7 @@
 
 @layer base {
   * {
-    @apply border-border/40 scroll-smooth;
+    @apply border-border/40 relative scroll-smooth;
   }
 
   html,

@@ -47,8 +47,15 @@ export const Photo = () => {
       className="relative"
     >
       <div className="relative overflow-hidden rounded-lg">
-        <div className="aspect-square w-72 lg:w-78 xl:w-96">
-          <Image src={"/profile.jpg"} alt="my profile photo" fill />
+        <div className="relative aspect-square w-72 lg:w-78 xl:w-96">
+          <Image
+            src={"/profile.jpg"}
+            alt="Naing Htet Linn profile picture"
+            priority
+            fill
+            sizes="(max-width: 1024px) 288px, (max-width: 1280px) 312px, 384px"
+            className="object-cover"
+          />
         </div>
 
         <div className="absolute top-22 right-8 md:right-5 lg:top-24 lg:right-12 xl:top-34 xl:right-8">

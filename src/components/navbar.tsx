@@ -79,6 +79,7 @@ export const Navbar = () => {
               {/* Github */}
               <a
                 href={siteConfig.github}
+                aria-label="Github account url"
                 className="hover:text-primary py-4 transition-all duration-300"
               >
                 <svg

@@ -44,10 +44,10 @@ export const Background = () => {
         ]}
         particleCount={
           screenSize.lessThanOrEqual("md")
-            ? 150
+            ? 200
             : screenSize.lessThanOrEqual("lg")
-              ? 250
-              : 350
+              ? 300
+              : 400
         }
         particleSpread={10}
         speed={0.1}

@@ -1,15 +1,24 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import RotatingText from "@/components/ui/rotating-text";
 import env from "@/config/env";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
+const ROLES = [
+  "Full-Stack Developer",
+  "Frontend Developer",
+  "Backend Developer",
+  "React-Native Developer",
+  "Software Engineer",
+];
+
 export const Text = () => {
   return (
-    <div className="w-full md:flex-1">
+    <div className="w-full text-center md:flex-1 md:text-left">
       {/* Status Badge */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -17,21 +26,42 @@ export const Text = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="mb-4 inline-flex items-center gap-2"
       >
-        <div className="bg-background shrink-0 border px-2 pb-1">
-          <span className="text-foreground/80 mr-2 font-mono text-xs">
-            {env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"}
-          </span>
+        <div
+          className="bg-background shrink-0 border px-2 pb-1"
+          aria-label="Job availability status"
+        >
           <span
             className={cn(
               "inline-block h-2 w-2 animate-ping rounded-full",
               env.NEXT_PUBLIC_AVAILABLE_STATUS ? "bg-green-500" : "bg-red-500",
             )}
           />
+          <span
+            className="text-foreground/80 ml-2 font-mono text-xs"
+            aria-label={
+              env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"
+            }
+          >
+            {env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"}
+          </span>
         </div>
         <div className="bg-secondary/60 h-px w-12" />
-        <span className="text-foreground/80 shrink-0 font-mono text-xs md:text-sm">
-          Full-Stack Developer
-        </span>
+        <RotatingText
+          aria-label={ROLES.join(", ")}
+          texts={ROLES}
+          mainClassName="min-w-40 text-left text-foreground/80 shrink-0 font-mono text-xs md:text-sm py-0.5 sm:py-1 md:py-2"
+          staggerFrom="last"
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-120%" }}
+          staggerDuration={0.025}
+          splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+          transition={{ type: "spring", damping: 30, stiffness: 400 }}
+          rotationInterval={2500}
+          splitBy="characters"
+          auto
+          loop
+        />
       </motion.div>
 
       {/* Main Heading */}
@@ -63,8 +93,8 @@ export const Text = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
       >
-        My core stack includes React, Next.js, Node.js, MongoDB, PostgreSQL and
-        TypeScript.
+        My core stack includes React, Next.js, Node.js, Nest.js, ReactNative,
+        PostgreSQL and TypeScript.
       </motion.p>
 
       <motion.div

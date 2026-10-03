@@ -41,15 +41,17 @@ export const ArrowIcon: React.FC<{ className?: string }> = ({ className }) => {
 export const Photo = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
+      // Start fully visible so the LCP image can paint immediately.
+      // Only animate scale (not opacity) to avoid delaying first paint.
+      initial={{ scale: 0.95 }}
+      whileInView={{ scale: 1 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
       className="relative"
     >
       <div className="relative overflow-hidden rounded-lg">
         <div className="relative aspect-square w-72 lg:w-78 xl:w-96">
           <Image
-            src={"/profile.jpg"}
+            src={"/profile.webp"}
             alt="Naing Htet Linn profile picture"
             priority
             fill

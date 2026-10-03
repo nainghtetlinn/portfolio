@@ -10,8 +10,11 @@ import { siteConfig } from "@/config/site";
 
 import { cn } from "@/lib/utils";
 
-import { CustomCursor } from "@/components/ui/custom-cursor";
 import { ThemeProvider } from "@/providers/theme-provider";
+// CursorLoader is a thin Client Component that lazy-loads CustomCursor with
+// ssr: false — this is required because dynamic({ ssr: false }) can only live
+// inside a Client Component, not directly in a Server Component.
+import { CursorLoader } from "@/components/ui/cursor-loader";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -62,7 +65,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
-        <CustomCursor />
+        <CursorLoader />
 
         {env.NODE_ENV === "development" && (
           <div className="fixed right-0 bottom-0 bg-blue-200 p-4">
@@ -74,8 +77,9 @@ export default function RootLayout({
           </div>
         )}
 
+        {/* lazyOnload: loads after page is fully interactive — won't block any Lighthouse metrics */}
         <Script
-          defer
+          strategy="lazyOnload"
           src="https://cloud.umami.is/script.js"
           data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
         ></Script>
@@ -83,3 +87,4 @@ export default function RootLayout({
     </html>
   );
 }
+

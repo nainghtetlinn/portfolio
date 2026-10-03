@@ -27,7 +27,7 @@ export const Bio = () => {
       <div className="mt-4 flex items-center justify-center p-4 lg:mt-0">
         <Frame className="relative aspect-square w-68 lg:w-78">
           <Image
-            src={"/bio_photo.png"}
+            src={"/bio_photo.webp"}
             alt="low poly style profile photo"
             fill
             sizes="(max-width: 1024px) 272px, 312px"

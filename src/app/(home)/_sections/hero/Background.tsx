@@ -1,7 +1,15 @@
 "use client";
 
-import { Particles } from "@/components/ui/particles";
+import dynamic from "next/dynamic";
 import useScreenSize from "@/hooks/use-screen-size";
+
+// Lazy-load the WebGL particle system — it's the heaviest piece of JS on
+// this page. Deferring it keeps Time-to-Interactive fast and avoids blocking
+// the LCP paint. The CSS grid background below acts as a graceful placeholder.
+const Particles = dynamic(
+  () => import("@/components/ui/particles").then((m) => ({ default: m.Particles })),
+  { ssr: false, loading: () => null },
+);
 
 export const Background = () => {
   const screenSize = useScreenSize();

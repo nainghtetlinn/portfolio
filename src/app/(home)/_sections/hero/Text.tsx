@@ -19,20 +19,21 @@ const ROLES = [
 export const Text = () => {
   return (
     <div className="w-full text-center md:flex-1 md:text-left">
-      {/* Status Badge */}
+      {/* Status Badge — start visible (opacity:1) so FCP isn't delayed */}
       <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        initial={{ opacity: 1, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: 0.05 }}
         className="mb-4 inline-flex items-center gap-2"
       >
         <div
           className="bg-background shrink-0 border px-2 pb-1"
           aria-label="Job availability status"
         >
+          {/* animate-pulse uses opacity+scale — GPU-composited, no forced reflow */}
           <span
             className={cn(
-              "inline-block h-2 w-2 animate-ping rounded-full",
+              "inline-block h-2 w-2 animate-pulse rounded-full",
               env.NEXT_PUBLIC_AVAILABLE_STATUS ? "bg-green-500" : "bg-red-500",
             )}
           />
@@ -64,11 +65,11 @@ export const Text = () => {
         />
       </motion.div>
 
-      {/* Main Heading */}
+      {/* Main Heading — start visible so FCP is not delayed by opacity:0 */}
       <motion.h1
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        initial={{ opacity: 1, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
         className="mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl"
       >
         <span className="text-foreground">Hey, I&apos;m </span>
@@ -79,18 +80,18 @@ export const Text = () => {
 
       {/* Description */}
       <motion.p
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        initial={{ opacity: 1, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: 0.15 }}
         className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
       >
         Software engineer from Myanmar with a passion for solving real-world
         problems using modern technologies.
       </motion.p>
       <motion.p
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        initial={{ opacity: 1, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
         className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
       >
         My core stack includes React, Next.js, Node.js, Nest.js, ReactNative,
@@ -98,9 +99,9 @@ export const Text = () => {
       </motion.p>
 
       <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        initial={{ opacity: 1, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: 0.25 }}
         className="mt-5 flex flex-col items-center gap-4 max-md:mx-auto max-md:justify-center sm:flex-row"
       >
         <Button asChild size="lg" className="rounded-full border-2 font-medium">

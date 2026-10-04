@@ -63,8 +63,8 @@ export default function RootLayout({
           as="image"
           href="/profile.webp"
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore — fetchpriority is valid HTML but TS types lag behind
-          fetchpriority="high"
+          // @ts-ignore — fetchPriority is valid HTML but TS types lag behind
+          fetchPriority="high"
           imageSizes="(max-width: 1024px) 288px, (max-width: 1280px) 312px, 384px"
         />
       </head>

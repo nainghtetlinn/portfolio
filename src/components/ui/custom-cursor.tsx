@@ -112,9 +112,14 @@ const CursorInner = ({
         target.closest(".cursor-hover");
 
       if (interactive) {
-        setIsHovering(true);
-        hoveredEl.current = interactive as HTMLElement;
-        hoveredRect.current = interactive.getBoundingClientRect();
+        // Only re-query layout if we've moved to a different element.
+        // getBoundingClientRect() forces a layout flush, so we avoid calling
+        // it on every mouseover event for the same element.
+        if (interactive !== hoveredEl.current) {
+          setIsHovering(true);
+          hoveredEl.current = interactive as HTMLElement;
+          hoveredRect.current = interactive.getBoundingClientRect();
+        }
       } else {
         setIsHovering(false);
         hoveredEl.current = null;

@@ -55,6 +55,7 @@ export const Photo = () => {
             alt="Naing Htet Linn profile picture"
             priority
             fill
+            fetchPriority="high"
             sizes="(max-width: 1024px) 288px, (max-width: 1280px) 312px, 384px"
             className="object-cover"
           />

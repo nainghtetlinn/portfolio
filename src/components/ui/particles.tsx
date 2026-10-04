@@ -130,14 +130,16 @@ const Particles: React.FC<ParticlesProps> = ({
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, cameraDistance);
 
-    const resize = () => {
-      const width = container.clientWidth;
-      const height = container.clientHeight;
+    // ResizeObserver delivers dimensions via contentRect without forcing a
+    // synchronous layout reflow (unlike reading clientWidth/clientHeight).
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) return;
+      const { width, height } = entry.contentRect;
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
-    };
-    window.addEventListener("resize", resize, false);
-    resize();
+    });
+    ro.observe(container);
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
@@ -231,7 +233,7 @@ const Particles: React.FC<ParticlesProps> = ({
     animationFrameId = requestAnimationFrame(update);
 
     return () => {
-      window.removeEventListener("resize", resize);
+      ro.disconnect();
       if (moveParticlesOnHover) {
         container.removeEventListener("mousemove", handleMouseMove);
       }

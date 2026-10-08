@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     optimizePackageImports: ["lucide-react", "motion", "tech-stack-icons"],
+    inlineCss: true,
   },
 };
 

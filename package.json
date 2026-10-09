@@ -29,9 +29,11 @@
     "ogl": "^1.0.11",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "react-icons": "^5.7.0",
     "tailwind-merge": "^3.7.0",
     "tech-stack-icons": "^3.7.1",
-    "zod": "^4.6.5"
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^16.3.8",

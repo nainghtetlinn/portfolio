@@ -1,10 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 
-export const ThemeToggleBtn = ({ className }: { className?: string }) => {
+export const ThemeToggleBtn = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const isLight = resolvedTheme === "light";
 
@@ -14,12 +13,7 @@ export const ThemeToggleBtn = ({ className }: { className?: string }) => {
       className="hover:text-primary cursor-pointer py-4 transition-transform duration-300"
       aria-label="Toggle theme"
     >
-      <div
-        className={cn(
-          "rounded-full transition-all duration-300 active:scale-95",
-          className,
-        )}
-      >
+      <div className="size-7 rounded-full transition-all duration-300 active:scale-95">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"

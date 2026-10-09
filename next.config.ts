@@ -15,7 +15,12 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   experimental: {
-    optimizePackageImports: ["lucide-react", "motion", "tech-stack-icons"],
+    optimizePackageImports: [
+      "lucide-react",
+      "react-icons",
+      "motion",
+      "tech-stack-icons",
+    ],
     inlineCss: true,
   },
 };

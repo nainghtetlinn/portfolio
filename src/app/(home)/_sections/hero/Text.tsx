@@ -42,7 +42,7 @@ export const Text = () => {
           aria-label={ROLES.join(", ")}
           texts={ROLES}
           mainClassName="min-w-40 text-left text-foreground/80 shrink-0 font-mono text-xs md:text-sm py-0.5 sm:py-1 md:py-2"
-          staggerFrom="last"
+          staggerFrom="first"
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           exit={{ y: "-120%" }}

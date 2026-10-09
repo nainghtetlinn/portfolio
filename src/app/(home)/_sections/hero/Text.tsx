@@ -1,11 +1,8 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import RotatingText from "@/components/ui/rotating-text";
 import env from "@/config/env";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Download } from "lucide-react";
-import { motion } from "motion/react";
 import Link from "next/link";
 
 const ROLES = [
@@ -19,13 +16,7 @@ const ROLES = [
 export const Text = () => {
   return (
     <div className="w-full text-center md:flex-1 md:text-left">
-      {/* Status Badge — start visible (opacity:1) so FCP isn't delayed */}
-      <motion.div
-        initial={{ opacity: 1, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, delay: 0.05 }}
-        className="mb-4 inline-flex items-center gap-2"
-      >
+      <div className="mb-4 inline-flex items-center gap-2">
         <div
           className="bg-background shrink-0 border px-2 pb-1"
           aria-label="Job availability status"
@@ -33,7 +24,7 @@ export const Text = () => {
           {/* animate-pulse uses opacity+scale — GPU-composited, no forced reflow */}
           <span
             className={cn(
-              "inline-block h-2 w-2 animate-pulse rounded-full",
+              "inline-block h-2 w-2 animate-ping rounded-full",
               env.NEXT_PUBLIC_AVAILABLE_STATUS ? "bg-green-500" : "bg-red-500",
             )}
           />
@@ -63,47 +54,27 @@ export const Text = () => {
           auto
           loop
         />
-      </motion.div>
+      </div>
 
       {/* Main Heading — start visible so FCP is not delayed by opacity:0 */}
-      <motion.h1
-        initial={{ opacity: 1, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl"
-      >
+      <h1 className="mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl">
         <span className="text-foreground">Hey, I&apos;m </span>
         <span className="text-primary relative block italic">
           Naing Htet Linn
         </span>
-      </motion.h1>
+      </h1>
 
       {/* Description */}
-      <motion.p
-        initial={{ opacity: 1, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, delay: 0.15 }}
-        className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
-      >
+      <p className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg">
         Software engineer from Myanmar with a passion for solving real-world
         problems using modern technologies.
-      </motion.p>
-      <motion.p
-        initial={{ opacity: 1, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-        className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg"
-      >
+      </p>
+      <p className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg">
         My core stack includes React, Next.js, Node.js, Nest.js, ReactNative,
         PostgreSQL and TypeScript.
-      </motion.p>
+      </p>
 
-      <motion.div
-        initial={{ opacity: 1, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, delay: 0.25 }}
-        className="mt-5 flex flex-col items-center gap-4 max-md:mx-auto max-md:justify-center sm:flex-row"
-      >
+      <div className="mt-5 flex flex-col items-center gap-4 max-md:mx-auto max-md:justify-center sm:flex-row">
         <Button asChild size="lg" className="rounded-full border-2 font-medium">
           <a href={"#contact"}>
             Lets Connect
@@ -121,7 +92,7 @@ export const Text = () => {
             <Download className="size-4" />
           </Link>
         </Button>
-      </motion.div>
+      </div>
     </div>
   );
 };

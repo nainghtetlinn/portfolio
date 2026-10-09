@@ -1,86 +1,53 @@
-import StackIcon from "tech-stack-icons";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 const SKILLS = [
   {
-    label: "Languages",
-    items: [
-      { name: "Typescript", icon: "typescript" },
-      { name: "Java", icon: "java" },
-      { name: "GoLang", icon: "go" },
-      { name: "C++", icon: "c++" },
-      { name: "Python", icon: "python" },
-      { name: "PHP", icon: "php" },
-    ],
-  },
-  {
-    label: "CSS",
-    items: [
-      { name: "TailwindCSS", icon: "tailwindcss" },
-      { name: "ShadcnUI", icon: "shadcnui" },
-      { name: "MaterialUi", icon: "materialui" },
-      { name: "Ant Design", icon: "antd" },
-    ],
-  },
-  {
     label: "Frontend",
+    prefix: "frontend",
     items: [
-      { name: "React.js", icon: "react" },
-      { name: "Next.js", icon: "nextjs2" },
-      { name: "Tanstack Start", icon: "tanstack" },
-      { name: "Electron", icon: "electron" },
-      { name: "ReactNative", icon: "reactnative" },
+      { name: "Typescript", icon: "TypeScript.svg" },
+      { name: "React.js", icon: "React.svg" },
+      { name: "Next.js", icon: "Next.js.svg" },
+      { name: "ReactNative", icon: "React.svg" },
+      { name: "TailwindCSS", icon: "Tailwind CSS.svg" },
+      { name: "Redux", icon: "Redux.svg" },
     ],
   },
   {
     label: "Backend",
+    prefix: "backend",
     items: [
-      { name: "Node.js", icon: "nodejs" },
-      { name: "Express" },
-      { name: "Nest.js", icon: "nestjs" },
-      { name: "SpringBoot", icon: "spring" },
+      { name: "Node.js", icon: "Node.js.svg" },
+      { name: "Express", icon: "Express.svg" },
+      { name: "Nest.js", icon: "Nest.js.svg" },
+      { name: "Java", icon: "Java.svg" },
+      { name: "SpringBoot", icon: "Spring.svg" },
     ],
   },
   {
-    label: "Libraries",
+    label: "Database",
+    prefix: "database",
     items: [
-      { name: "Zustand", icon: "zustand" },
-      { name: "Redux", icon: "redux" },
-      { name: "ReactQuery", icon: "reactquery" },
-      { name: "Zod", icon: "zod" },
-      { name: "Three.js", icon: "threejs" },
-    ],
-  },
-  {
-    label: "Databases",
-    items: [
-      { name: "MongoDb", icon: "mongodb" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "MySQL", icon: "mysql" },
-      { name: "Redis", icon: "redis" },
-      { name: "Prisma", icon: "prisma" },
-      { name: "Supabase", icon: "supabase" },
-      { name: "Firebase", icon: "firebase" },
+      { name: "MongoDB", icon: "MongoDB.svg" },
+      { name: "PostgreSQL", icon: "PostgresSQL.svg" },
+      { name: "MySQL", icon: "MySQL.svg" },
+      { name: "SQLite", icon: "SQLite.svg" },
+      { name: "Redis", icon: "Redis.svg" },
     ],
   },
   {
     label: "Tools & Technologies",
+    prefix: "others",
     items: [
-      { name: "Git", icon: "git" },
-      { name: "Github", icon: "github" },
-      { name: "Docker", icon: "docker" },
-      { name: "Linux", icon: "linux" },
-      { name: "CI/CD" },
-      { name: "Figma", icon: "figma" },
-    ],
-  },
-  {
-    label: "Hostings",
-    items: [
-      { name: "DigitalOcean", icon: "digitalocean" },
-      { name: "Netlify", icon: "netlify" },
-      { name: "Vercel", icon: "vercel" },
-      { name: "Render", icon: "render" },
+      { name: "Git", icon: "Git.svg" },
+      { name: "Github", icon: "GitHub.svg" },
+      { name: "Docker", icon: "Docker.svg" },
+      { name: "Linux", icon: "Linux.svg" },
+      { name: "CI/CD", icon: "GitHub Actions.svg" },
+      { name: "DigitalOcean", icon: "Digital Ocean.svg" },
+      { name: "AWS", icon: "AWS.svg" },
+      { name: "GoogleCloud", icon: "Google Cloud.svg" },
     ],
   },
 ];
@@ -102,7 +69,13 @@ export const Skills = () => {
                   className="gap-2 px-4 py-2 text-sm font-semibold lg:text-base"
                 >
                   {item.icon && (
-                    <StackIcon name={item.icon} className="size-5 lg:size-6" />
+                    <Image
+                      src={`/skills/${skill.prefix}/${item.icon}`}
+                      alt={`${item.name} logo`}
+                      width={24}
+                      height={24}
+                      className="size-5 object-contain lg:size-6"
+                    />
                   )}
                   {item.name}
                 </Badge>

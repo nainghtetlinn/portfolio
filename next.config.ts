@@ -19,7 +19,6 @@ const nextConfig: NextConfig = {
       "lucide-react",
       "react-icons",
       "motion",
-      "tech-stack-icons",
     ],
     inlineCss: true,
   },

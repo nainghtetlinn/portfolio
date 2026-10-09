@@ -14,9 +14,9 @@ export const Footer = () => {
 
         <div className="grid w-full grid-cols-2 md:w-1/3">
           <aside>
-            <h5 className="text-secondary-foreground/70 mb-2 font-sans font-medium">
+            <p className="text-secondary-foreground/70 mb-2 font-sans font-medium">
               Contact
-            </h5>
+            </p>
             <ul className="space-y-2 text-sm md:text-base">
               <li>
                 <a
@@ -58,9 +58,9 @@ export const Footer = () => {
           </aside>
 
           <aside>
-            <h5 className="text-secondary-foreground/70 mb-2 font-sans font-medium">
+            <p className="text-secondary-foreground/70 mb-2 font-sans font-medium">
               Navigation
-            </h5>
+            </p>
             <ul className="space-y-2 text-sm md:text-base">
               <li>
                 <a

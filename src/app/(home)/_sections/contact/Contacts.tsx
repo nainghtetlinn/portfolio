@@ -29,7 +29,7 @@ export const Contacts = () => {
               </svg>
             </div>
             <div>
-              <h5 className="text-lg font-semibold">Email</h5>
+              <p className="text-lg font-semibold">Email</p>
               <span className="text-muted-foreground font-mono underline">
                 {siteConfig.email}
               </span>
@@ -60,7 +60,7 @@ export const Contacts = () => {
               </svg>
             </div>
             <div>
-              <h5 className="text-lg font-semibold">Github</h5>
+              <p className="text-lg font-semibold">Github</p>
               <span className="text-muted-foreground font-mono underline">
                 nainghtetlinn
               </span>
@@ -90,7 +90,7 @@ export const Contacts = () => {
               </svg>
             </div>
             <div>
-              <h5 className="text-lg font-semibold">X</h5>
+              <p className="text-lg font-semibold">X</p>
               <span className="text-muted-foreground font-mono underline">
                 naingdev
               </span>
@@ -122,7 +122,7 @@ export const Contacts = () => {
               </svg>
             </div>
             <div>
-              <h5 className="text-lg font-semibold">LinkedIn</h5>
+              <p className="text-lg font-semibold">LinkedIn</p>
               <span className="text-muted-foreground font-mono underline">
                 naingdev
               </span>
@@ -139,7 +139,7 @@ export const Contacts = () => {
               <Send className="size-6 md:size-7" />
             </div>
             <div>
-              <h5 className="text-lg font-semibold">Telegram</h5>
+              <p className="text-lg font-semibold">Telegram</p>
               <span className="text-muted-foreground font-mono underline">
                 naing_hl
               </span>

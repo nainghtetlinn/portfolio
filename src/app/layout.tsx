@@ -51,6 +51,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/*
+          Preload the LCP hero image so the browser fetches it as soon as the
+          HTML arrives — before React even executes. This is the single most
+          impactful fix for a high LCP on mobile / slow connections.
+          The `imagesizes` value matches the `sizes` prop on the <Image> below.
+        */}
+        <link
+          rel="preload"
+          as="image"
+          href="/profile.webp"
+          fetchPriority="high"
+          imageSizes="(max-width: 1024px) 288px, (max-width: 1280px) 312px, 384px"
+        />
+      </head>
       <body
         className={cn(
           "font-sans antialiased",

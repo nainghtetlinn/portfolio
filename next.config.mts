@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
-import analyzer from "@next/bundle-analyzer";
+import { createMDX } from "fumadocs-mdx/next";
 
-const withBundleAnalyzer = analyzer({
-  enabled: process.env.ANALYZE === "true",
-});
+const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   images: {
@@ -16,8 +14,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     optimizePackageImports: ["lucide-react", "react-icons", "motion"],
-    inlineCss: true,
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withMDX(nextConfig);

@@ -1,7 +1,6 @@
 "use client";
 
 import { Logo } from "@/components/ui/logo";
-import { NAV_LINKS } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
@@ -45,20 +44,24 @@ export const Navbar = () => {
         <nav className="text-foreground relative z-10 container mx-auto px-4 md:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a href="#home">
+            <a href={"/"}>
               <Logo />
             </a>
 
             {/* Nav links */}
             <ul className="hidden items-center gap-6 md:flex">
-              {NAV_LINKS.map((l) => (
-                <li
-                  key={l.id}
-                  className="hover:text-primary cursor-pointer p-2 transition-all duration-300"
-                >
-                  <a href={"#" + l.id}>{l.label}</a>
-                </li>
-              ))}
+              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
+                <a href={"/"}>Home</a>
+              </li>
+              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
+                <a href={"/#about"}>About</a>
+              </li>
+              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
+                <a href={"/#projects"}>Projects</a>
+              </li>
+              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
+                <a href={"/#contact"}>Contact</a>
+              </li>
             </ul>
 
             <div className="flex items-center gap-6">

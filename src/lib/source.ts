@@ -8,7 +8,7 @@ const projects = defineDocs({
   docs: {
     schema: pageSchema.extend({
       cover: z.string().optional(),
-      github: z.string().optional(),
+      repo: z.string().optional(),
       url: z.string().optional(),
     }),
   },

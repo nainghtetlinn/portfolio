@@ -20,7 +20,7 @@ export const Projects = () => {
                 name: project.title ?? "unknown",
                 description: project.description,
                 image: project.cover ?? "/cover.webp",
-                github: project.github,
+                repo: project.repo,
                 url: project.url,
                 link: page.url,
               }}
@@ -38,7 +38,7 @@ const ProjectArticle = ({
     name: string;
     description?: string;
     image: string;
-    github?: string;
+    repo?: string;
     url?: string;
     link: string;
   };
@@ -71,9 +71,12 @@ const ProjectArticle = ({
               <FiBookOpen />
             </a>
           </Button>
-          {project.github && (
+          {project.repo && (
             <Button asChild variant={"outline"} className="border-2">
-              <a href={project.github} target="_blank">
+              <a
+                href={`https://github.com/nainghtetlinn/${project.repo}`}
+                target="_blank"
+              >
                 View Code
                 <FiGithub />
               </a>

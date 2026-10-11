@@ -5,24 +5,33 @@ import { FiBookOpen, FiGithub, FiLink } from "react-icons/fi";
 import { Background } from "./Background";
 
 export const Projects = () => {
+  const tree = projectSource.getPageTree();
+  const meta = projectSource.getNodeMeta(tree);
+  const featured = meta?.data?.featured ?? [];
+
   return (
     <div className="*:border-t">
-      {projectSource
-        .getPageTree()
-        .children.filter((content) => content.type === "page")
-        .map((page) => {
-          const project = projectSource.getNodePage(page)?.data;
-          if (!project) return null;
+      {tree.children
+        .filter((content) => {
+          return content.type === "page";
+        })
+        .map((node) => {
+          const page = projectSource.getNodePage(node)?.data;
+          if (!page) return null;
+
+          const id = node.$id?.split(".")[0] ?? "";
+          if (!featured.includes(id)) return null;
+
           return (
             <ProjectArticle
-              key={project.title}
+              key={page.title}
               project={{
-                name: project.title ?? "unknown",
-                description: project.description,
-                image: project.cover ?? "/cover.webp",
-                repo: project.repo,
-                url: project.url,
-                link: page.url,
+                name: page.title ?? "unknown",
+                description: page.description,
+                image: page.cover ?? "/cover.webp",
+                repo: page.repo,
+                url: page.url,
+                link: node.url,
               }}
             />
           );

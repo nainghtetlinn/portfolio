@@ -1,5 +1,5 @@
 import { loader } from "fumadocs-core/source";
-import { pageSchema } from "fumadocs-core/source/schema";
+import { metaSchema, pageSchema } from "fumadocs-core/source/schema";
 import { defineDocs } from "fumadocs-mdx/macro";
 import { z } from "zod";
 
@@ -10,6 +10,11 @@ const projects = defineDocs({
       cover: z.string().optional(),
       repo: z.string().optional(),
       url: z.string().optional(),
+    }),
+  },
+  meta: {
+    schema: metaSchema.extend({
+      featured: z.array(z.string()).optional(),
     }),
   },
 });

@@ -18,7 +18,7 @@ export async function getRepoReadme(repo: string): Promise<string> {
     {
       headers,
       next: {
-        revalidate: 2592000,
+        revalidate: 3600,
       },
     },
   );

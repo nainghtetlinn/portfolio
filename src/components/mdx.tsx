@@ -11,12 +11,12 @@ export function getMDXComponents(components?: MDXComponents) {
       </h1>
     ),
     p: ({ children, ...props }) => (
-      <p className="font-mono" {...props}>
+      <p className="[&>code]:bg-accent font-mono" {...props}>
         {children}
       </p>
     ),
     li: ({ children, ...props }) => (
-      <li className="font-mono" {...props}>
+      <li className="[&>code]:bg-accent font-mono" {...props}>
         {children}
       </li>
     ),
@@ -24,6 +24,11 @@ export function getMDXComponents(components?: MDXComponents) {
       <td className="font-mono" {...props}>
         {children}
       </td>
+    ),
+    a: ({ children, ...props }) => (
+      <a className="[&>code]:bg-accent font-mono" {...props}>
+        {children}
+      </a>
     ),
   } satisfies MDXComponents;
 }

@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/navbar";
 import { SectionSeperator } from "@/components/section-seperator";
 import dynamic from "next/dynamic";
 import { HeroSection } from "./_sections/hero";
@@ -30,8 +29,6 @@ const Footer = dynamic(
 export default function Home() {
   return (
     <>
-      <Navbar />
-
       <HeroSection />
 
       <SectionSeperator />

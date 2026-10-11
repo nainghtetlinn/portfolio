@@ -1,12 +1,17 @@
 import type { NextConfig } from "next";
-import analyzer from "@next/bundle-analyzer";
+import { createMDX } from "fumadocs-mdx/next";
 
-const withBundleAnalyzer = analyzer({
-  enabled: process.env.ANALYZE === "true",
-});
+const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/nainghtetlinn/**",
+      },
+    ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
@@ -20,4 +25,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withMDX(nextConfig);

@@ -1,0 +1,25 @@
+import { loader } from "fumadocs-core/source";
+import { metaSchema, pageSchema } from "fumadocs-core/source/schema";
+import { defineDocs } from "fumadocs-mdx/macro";
+import { z } from "zod";
+
+const projects = defineDocs({
+  dir: "content/projects",
+  docs: {
+    schema: pageSchema.extend({
+      cover: z.string().optional(),
+      repo: z.string().optional(),
+      url: z.string().optional(),
+    }),
+  },
+  meta: {
+    schema: metaSchema.extend({
+      featured: z.array(z.string()).optional(),
+    }),
+  },
+});
+
+export const projectSource = loader({
+  baseUrl: "/projects/p",
+  source: projects.toFumadocsSource(),
+});

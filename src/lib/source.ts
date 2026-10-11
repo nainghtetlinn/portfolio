@@ -20,6 +20,6 @@ const projects = defineDocs({
 });
 
 export const projectSource = loader({
-  baseUrl: "/projects",
+  baseUrl: "/projects/p",
   source: projects.toFumadocsSource(),
 });

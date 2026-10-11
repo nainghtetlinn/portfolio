@@ -57,7 +57,7 @@ export const Navbar = () => {
                 <a href={"/#about"}>About</a>
               </li>
               <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-                <a href={"/#projects"}>Projects</a>
+                <a href={"/projects"}>Projects</a>
               </li>
               <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
                 <a href={"/#contact"}>Contact</a>

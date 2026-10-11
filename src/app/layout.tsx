@@ -15,6 +15,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 // ssr: false — this is required because dynamic({ ssr: false }) can only live
 // inside a Client Component, not directly in a Server Component.
 import { CursorLoader } from "@/components/ui/cursor-loader";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -50,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         {/*
           Preload the LCP hero image so the browser fetches it as soon as the
@@ -78,6 +79,7 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
         <CursorLoader />

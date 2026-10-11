@@ -1,4 +1,5 @@
 {
+  "title": "Projects",
   "pages": [
     "naingcn",
     "moviebookingsystem",
@@ -6,5 +7,10 @@
     "invitation_generator",
     "asciiart"
   ],
-  "featured": ["naingcn", "asciiart", "talkichat"]
+  "featured": [
+    "naingcn",
+    "invitation_generator",
+    "talkichat",
+    "moviebookingsystem"
+  ]
 }

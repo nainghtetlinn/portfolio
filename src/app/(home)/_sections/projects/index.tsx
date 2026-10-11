@@ -1,6 +1,6 @@
 import { SectionLabel } from "@/components/section-label";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
+import Link from "next/link";
 import { Projects } from "./Projects";
 
 export const ProjectsSection = () => {
@@ -14,11 +14,11 @@ export const ProjectsSection = () => {
 
           <div className="flex h-32 items-center justify-center border-t">
             <Button variant={"ghost"} asChild className="font-mono uppercase">
-              <a href={siteConfig.github} target="_blank">
+              <Link href={"/projects"}>
                 <span className="bg-foreground/40 mr-2 inline-block h-px w-8"></span>
-                view all projects on github
+                view all projects
                 <span className="bg-foreground/40 ml-2 inline-block h-px w-8"></span>
-              </a>
+              </Link>
             </Button>
           </div>
         </main>

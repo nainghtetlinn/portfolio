@@ -12,7 +12,9 @@ import { FiGithub, FiLink } from "react-icons/fi";
 
 const compiler = createCompiler();
 
-export default async function Page(props: PageProps<"/projects/[[...slug]]">) {
+export default async function Page(
+  props: PageProps<"/projects/p/[[...slug]]">,
+) {
   const params = await props.params;
   const page = projectSource.getPage(params.slug);
 
@@ -78,7 +80,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<"/projects/[[...slug]]">,
+  props: PageProps<"/projects/p/[[...slug]]">,
 ): Promise<Metadata> {
   const params = await props.params;
   const page = projectSource.getPage(params.slug);

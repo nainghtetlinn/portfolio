@@ -73,7 +73,7 @@ const ProjectArticle = ({
       <div className="flex flex-col justify-center p-4 pb-8 md:p-8">
         <h2>{project.name}</h2>
         <p className="mt-4 font-mono">{project.description}</p>
-        <div className="mt-8 space-x-4">
+        <div className="mt-8 flex items-center gap-2">
           <Button asChild className="border-2">
             <a href={project.link}>
               Overview
@@ -86,7 +86,7 @@ const ProjectArticle = ({
                 href={`https://github.com/nainghtetlinn/${project.repo}`}
                 target="_blank"
               >
-                View Code
+                Code
                 <FiGithub />
               </a>
             </Button>
@@ -94,7 +94,7 @@ const ProjectArticle = ({
           {project.url && (
             <Button asChild variant={"outline"} className="border-2">
               <a href={project.url} target="_blank">
-                Live Demo
+                Demo
                 <FiLink />
               </a>
             </Button>

@@ -37,9 +37,10 @@ const Page = () => {
                     src={page.cover ?? "/cover.webp"}
                     alt={page.title ?? "project cover"}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1200px) 100vw"
                     className="object-contain object-center transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
+                    fetchPriority="high"
+                    priority
                   />
                 </div>
 

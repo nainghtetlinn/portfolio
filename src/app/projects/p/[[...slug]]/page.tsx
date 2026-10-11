@@ -35,14 +35,18 @@ export default async function Page(
         enabled: false,
       }}
     >
-      <Image
-        src={page.data.cover ?? "/cover.webp"}
-        alt="Cover Image"
-        width={1024}
-        height={572}
-        priority
-        className="aspect-video w-full overflow-hidden rounded-lg object-contain"
-      />
+      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+        <Image
+          src={page.data.cover ?? "/cover.webp"}
+          alt="Cover Image"
+          fill
+          priority
+          fetchPriority="high"
+          className="object-contain"
+          sizes="(max-width: 768px) 80vw, (max-width: 1200px) 100vw"
+        />
+      </div>
+
       <div className="mb-8 flex items-center gap-4">
         <Button asChild variant={"outline"}>
           <a

@@ -29,7 +29,7 @@ const Page = () => {
             return (
               <article
                 key={page.title}
-                className="bg-card group flex flex-col overflow-hidden rounded-xl border shadow-sm transition-shadow hover:shadow-md"
+                className="bg-card group flex flex-col border shadow-sm transition-shadow hover:shadow-md"
               >
                 {/* Cover image */}
                 <div className="bg-muted relative aspect-video w-full overflow-hidden">

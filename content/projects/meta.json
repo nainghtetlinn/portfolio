@@ -1,10 +1,13 @@
 {
   "title": "Projects",
   "pages": [
+    "tea_mixer_ai_server",
+    "tea_mixer_application",
+    "tea_mixer_firmware",
+    "invitation_generator",
     "naingcn",
     "moviebookingsystem",
     "talkichat",
-    "invitation_generator",
     "asciiart"
   ],
   "featured": [

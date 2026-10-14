@@ -9,8 +9,23 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { FiGithub, FiLink } from "react-icons/fi";
+import dotenv from "shiki/langs/dotenv.mjs";
 
-const compiler = createCompiler();
+const compiler = createCompiler({
+  rehypeCodeOptions: {
+    // 1. Resolve ShikiError: Map `env` code blocks to `dotenv`
+    langAlias: {
+      env: "dotenv",
+    },
+    // Optional: Explicitly provide languages if compiling purely on the client
+    langs: [dotenv, "bash", "typescript", "json"],
+    // Themes config
+    themes: {
+      light: "github-light",
+      dark: "github-dark",
+    },
+  },
+});
 
 export default async function Page(
   props: PageProps<"/projects/p/[[...slug]]">,

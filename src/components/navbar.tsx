@@ -9,6 +9,7 @@ import { MenuToggleBtn } from "./menu-toggle-btn";
 import { MobileNavMenu } from "./mobile-nav-menu";
 import { NavbarBackdrop } from "./navbar-backdrop";
 import { ThemeToggleBtn } from "./theme-toggle-btn";
+import Link from "next/link";
 
 export const Navbar = () => {
   const { scrollY } = useScroll();
@@ -50,17 +51,37 @@ export const Navbar = () => {
 
             {/* Nav links */}
             <ul className="hidden items-center gap-6 md:flex">
-              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-                <a href={"/"}>Home</a>
+              <li>
+                <a
+                  href={"/"}
+                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                >
+                  Home
+                </a>
               </li>
-              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-                <a href={"/#about"}>About</a>
+              <li>
+                <a
+                  href={"/#about"}
+                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                >
+                  About
+                </a>
               </li>
-              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-                <a href={"/projects"}>Projects</a>
+              <li>
+                <Link
+                  href={"/projects"}
+                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                >
+                  Projects
+                </Link>
               </li>
-              <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-                <a href={"/#contact"}>Contact</a>
+              <li>
+                <a
+                  href={"/#contact"}
+                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                >
+                  Contact
+                </a>
               </li>
             </ul>
 

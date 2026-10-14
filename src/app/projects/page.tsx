@@ -13,11 +13,9 @@ const Page = () => {
     <main className="pt-20 pb-16">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="mt-10 pb-8">
-          <h1 className="text-primary font-bold tracking-tight">Projects</h1>
-          <p className="text-muted-foreground mt-2 font-mono">
-            A collection of things I&apos;ve built.
-          </p>
+        <div className="mt-6 pb-8">
+          <h1 className="text-primary">Projects</h1>
+          <p className="mt-2">A collection of things I&apos;ve built.</p>
         </div>
 
         {/* Grid */}

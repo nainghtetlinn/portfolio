@@ -3,24 +3,21 @@ import Image from "next/image";
 
 export const Bio = () => {
   return (
-    <section className="relative lg:flex lg:items-center lg:gap-8">
-      <article className="max-w-4xl space-y-3 pl-4 font-mono leading-6 md:pl-8 lg:leading-8">
+    <section className="relative lg:flex lg:items-center">
+      <article className="max-w-4xl px-4 md:px-8">
         <p className="text-justify">
-          Hello! I&apos;m Naing Htet Linn, a full-stack web developer and React
-          Native developer with a strong foundation in building responsive,
-          scalable applications. My journey in software development began with a
-          curiosity about how the apps on our everyday devices work.
-        </p>
-        <p className="text-justify">
-          I work across the full-stack using technologies like TypeScript,
+          &gt; Hello! I&apos;m Naing Htet Linn, a full-stack web developer and
+          React Native developer with a strong foundation in building
+          responsive, scalable applications. My journey in software development
+          began with a curiosity about how the apps on our everyday devices
+          work. <br />
+          &gt; I work across the full-stack using technologies like TypeScript,
           React, Next.js, Express, NestJS, React Native, MongoDB, PostgreSQL,
           and Spring Boot, and I enjoy designing applications from backend
-          architecture to polished user interfaces.
-        </p>
-        <p className="text-justify">
-          Outside of development, I love experimenting with Arduino projects,
-          playing volleyball, badminton, and chess, and enjoying a cup of black
-          coffee while exploring new technologies.
+          architecture to polished user interfaces. <br />
+          &gt; Outside of development, I love experimenting with Arduino
+          projects, playing volleyball, badminton, and chess, and enjoying a cup
+          of black coffee while exploring new technologies.
         </p>
       </article>
 

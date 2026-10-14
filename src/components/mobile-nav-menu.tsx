@@ -2,6 +2,7 @@
 
 import { useMenuStore } from "@/lib/menu-store";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 export const MobileNavMenu = () => {
   const isOpen = useMenuStore((state) => state.isOpen);
@@ -16,18 +17,38 @@ export const MobileNavMenu = () => {
           className="overflow-hidden md:hidden"
         >
           {/* Nav links */}
-          <ul className="pb-4">
-            <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-              <a href={"/"}>Home</a>
+          <ul className="space-y-2 pb-4">
+            <li>
+              <a
+                href={"/"}
+                className="hover:text-primary hover:bg-accent inline-block w-full cursor-pointer p-2 text-center transition-all duration-300"
+              >
+                Home
+              </a>
             </li>
-            <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-              <a href={"/#about"}>About</a>
+            <li>
+              <a
+                href={"/#about"}
+                className="hover:text-primary hover:bg-accent inline-block w-full cursor-pointer p-2 text-center transition-all duration-300"
+              >
+                About
+              </a>
             </li>
-            <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-              <a href={"/projects"}>Projects</a>
+            <li>
+              <Link
+                href={"/projects"}
+                className="hover:text-primary hover:bg-accent inline-block w-full cursor-pointer p-2 text-center transition-all duration-300"
+              >
+                Projects
+              </Link>
             </li>
-            <li className="hover:text-primary cursor-pointer p-2 transition-all duration-300">
-              <a href={"/#contact"}>Contact</a>
+            <li>
+              <a
+                href={"/#contact"}
+                className="hover:text-primary hover:bg-accent inline-block w-full cursor-pointer p-2 text-center transition-all duration-300"
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </motion.div>

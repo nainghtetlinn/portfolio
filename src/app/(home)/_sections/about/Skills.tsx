@@ -55,9 +55,9 @@ const SKILLS = [
 export const Skills = () => {
   return (
     <section className="space-y-6 px-4 pt-8 md:px-8">
-      <h2 className="font-bold">Skills & Tools</h2>
+      <h2>Skills & Tools</h2>
 
-      <div className="grid gap-8 font-mono md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         {SKILLS.map((skill) => (
           <div key={skill.label} className="space-y-4">
             <h3>{skill.label}</h3>
@@ -66,7 +66,7 @@ export const Skills = () => {
                 <Badge
                   key={item.name}
                   variant={"outline"}
-                  className="gap-2 px-4 py-2 text-sm font-semibold lg:text-base"
+                  className="gap-2 px-4 py-2 font-mono text-sm lg:text-base"
                 >
                   {item.icon && (
                     <Image

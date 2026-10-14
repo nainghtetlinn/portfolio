@@ -72,16 +72,16 @@ const ProjectArticle = ({
       {/* Project Text */}
       <div className="flex flex-col justify-center p-4 pb-8 md:p-8">
         <h2>{project.name}</h2>
-        <p className="mt-4 text-justify font-mono">{project.description}</p>
-        <div className="mt-8 flex items-center gap-2">
-          <Button asChild className="border-2">
+        <p className="mt-4 text-justify">{project.description}</p>
+        <div className="mt-4 flex items-center gap-2 md:mt-6">
+          <Button asChild variant={"default"}>
             <a href={project.link}>
               Overview
               <FiBookOpen />
             </a>
           </Button>
           {project.repo && (
-            <Button asChild variant={"outline"} className="border-2">
+            <Button asChild variant={"outline"}>
               <a
                 href={`https://github.com/nainghtetlinn/${project.repo}`}
                 target="_blank"
@@ -92,7 +92,7 @@ const ProjectArticle = ({
             </Button>
           )}
           {project.url && (
-            <Button asChild variant={"outline"} className="border-2">
+            <Button asChild variant={"outline"}>
               <a href={project.url} target="_blank">
                 Demo
                 <FiLink />

@@ -23,18 +23,18 @@ export const Stats = () => {
               },
             )}
           >
-            <div className="text-foreground mb-2 text-3xl font-bold">
+            <div className="mb-2 text-3xl font-bold">
               <CountUp from={0} to={stat.value} />+
             </div>
-            <div className="text-foreground font-mono text-xs tracking-wider uppercase">
+            <p className="text-muted-foreground text-xs tracking-wider uppercase">
               {stat.label}
-            </div>
+            </p>
           </div>
         ))}
       </div>
-      <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex">
-        SCROLL DOWN
-        <ArrowDownSquareIcon className="size-4 animate-pulse" />
+      <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 md:inline-flex">
+        <span className="font-mono text-sm">SCROLL DOWN</span>
+        <ArrowDownSquareIcon className="size-5" />
       </div>
     </div>
   );

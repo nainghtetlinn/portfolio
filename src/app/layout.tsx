@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 
 import { geistMono, orbitronSans } from "@/assets/fonts";
@@ -14,8 +15,13 @@ import { ThemeProvider } from "@/providers/theme-provider";
 // CursorLoader is a thin Client Component that lazy-loads CustomCursor with
 // ssr: false — this is required because dynamic({ ssr: false }) can only live
 // inside a Client Component, not directly in a Server Component.
-import { CursorLoader } from "@/components/ui/cursor-loader";
 import { Navbar } from "@/components/navbar";
+import { CursorLoader } from "@/components/ui/cursor-loader";
+
+const Footer = dynamic(
+  () => import("@/components/footer").then((m) => ({ default: m.Footer })),
+  { loading: () => <div className="h-24" /> },
+);
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -81,6 +87,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
         <CursorLoader />
 

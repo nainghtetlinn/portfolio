@@ -18,7 +18,7 @@ export const Text = () => {
     <div className="w-full text-center md:flex-1 md:text-left">
       <div className="mb-4 inline-flex items-center gap-2">
         <div
-          className="bg-background shrink-0 border px-2 pb-1"
+          className="bg-background border-border shrink-0 border px-2 pb-0.5 md:px-3 md:pt-1 md:pb-1.5"
           aria-label="Job availability status"
         >
           {/* animate-pulse uses opacity+scale — GPU-composited, no forced reflow */}
@@ -29,7 +29,7 @@ export const Text = () => {
             )}
           />
           <span
-            className="text-foreground/80 ml-2 font-mono text-xs"
+            className="text-foreground/80 ml-2 font-mono text-xs md:text-sm"
             aria-label={
               env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"
             }
@@ -37,17 +37,17 @@ export const Text = () => {
             {env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"}
           </span>
         </div>
-        <div className="bg-secondary/60 h-px w-12" />
+        <div className="bg-border h-px w-12" />
         <RotatingText
           aria-label={ROLES.join(", ")}
           texts={ROLES}
-          mainClassName="min-w-40 text-left text-foreground/80 shrink-0 font-mono text-xs md:text-sm py-0.5 sm:py-1 md:py-2"
+          mainClassName="min-w-40 text-left text-foreground/80 shrink-0 font-mono text-xs md:text-sm"
           staggerFrom="first"
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           exit={{ y: "-120%" }}
           staggerDuration={0.025}
-          splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+          splitLevelClassName="overflow-hidden"
           transition={{ type: "spring", damping: 30, stiffness: 400 }}
           rotationInterval={2500}
           splitBy="characters"
@@ -57,39 +57,30 @@ export const Text = () => {
       </div>
 
       {/* Main Heading — start visible so FCP is not delayed by opacity:0 */}
-      <h1 className="mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-5xl xl:text-6xl">
-        <span className="text-foreground">Hey, I&apos;m </span>
-        <span className="text-primary relative block italic">
-          Naing Htet Linn
-        </span>
+      <h1 className="mb-4">
+        <span>Hey, I&apos;m </span>
+        <span className="text-primary block italic">Naing Htet Linn</span>
       </h1>
 
       {/* Description */}
-      <p className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg">
-        Software engineer from Myanmar with a passion for solving real-world
-        problems using modern technologies.
-      </p>
-      <p className="text-foreground/80 max-w-2xl font-mono text-sm lg:text-lg">
-        My core stack includes React, Next.js, Node.js, Nest.js, ReactNative,
-        PostgreSQL and TypeScript.
+      <p className="text-foreground/80 max-w-3xl text-justify">
+        &gt; Software engineer from Myanmar with a passion for solving
+        real-world problems using modern technologies. <br />
+        &gt; My core stack includes React, Next.js, Node.js, Nest.js,
+        ReactNative, PostgreSQL and TypeScript.
       </p>
 
-      <div className="mt-5 flex flex-col items-center gap-4 max-md:mx-auto max-md:justify-center sm:flex-row">
-        <Button asChild size="lg" className="rounded-full border-2 font-medium">
+      <div className="mt-5 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+        <Button asChild variant={"default"} size={"lg"}>
           <a href={"#contact"}>
             Lets Connect
-            <ArrowUpRight className="size-4" />
+            <ArrowUpRight />
           </a>
         </Button>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="rounded-full border-2 font-medium"
-        >
+        <Button asChild variant={"outline"} size={"lg"}>
           <Link href={"/resume.pdf"} prefetch={false}>
             Download resume
-            <Download className="size-4" />
+            <Download />
           </Link>
         </Button>
       </div>

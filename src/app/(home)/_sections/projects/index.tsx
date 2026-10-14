@@ -13,11 +13,11 @@ export const ProjectsSection = () => {
           <Projects />
 
           <div className="flex h-32 items-center justify-center border-t">
-            <Button variant={"ghost"} asChild className="font-mono uppercase">
+            <Button asChild variant={"ghost"} size={"lg"}>
               <Link href={"/projects"}>
-                <span className="bg-foreground/40 mr-2 inline-block h-px w-8"></span>
-                view all projects
-                <span className="bg-foreground/40 ml-2 inline-block h-px w-8"></span>
+                <span className="bg-border mr-2 inline-block h-px w-10"></span>
+                VIEW ALL PROJECTS
+                <span className="bg-border ml-2 inline-block h-px w-10"></span>
               </Link>
             </Button>
           </div>

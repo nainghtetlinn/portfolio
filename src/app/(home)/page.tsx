@@ -21,11 +21,6 @@ const ContactSection = dynamic(
   { loading: () => <div className="min-h-[50vh]" /> },
 );
 
-const Footer = dynamic(
-  () => import("@/components/footer").then((m) => ({ default: m.Footer })),
-  { loading: () => <div className="h-24" /> },
-);
-
 export default function Home() {
   return (
     <>
@@ -44,8 +39,6 @@ export default function Home() {
       <ContactSection />
 
       <SectionSeperator />
-
-      <Footer />
     </>
   );
 }

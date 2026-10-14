@@ -1,23 +1,25 @@
 import { siteConfig } from "@/config/site";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground font-mono">
+    <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto grid gap-4 px-4 pt-8 pb-4 md:flex md:justify-between md:px-8 md:pb-6">
-        <div className="font-sans">
+        <div>
           <h2>Naing</h2>
           <p className="md:mb-4">{siteConfig.email}</p>
           <p className="hidden font-mono text-base md:block">
-            &copy; 2025 Naing Htet Linn. All rights reserved.
+            &copy; {new Date().getFullYear()} Naing Htet Linn. All rights
+            reserved.
           </p>
         </div>
 
         <div className="grid w-full grid-cols-2 md:w-1/3">
           <aside>
-            <p className="text-secondary-foreground/70 mb-2 font-sans font-medium">
+            <p className="text-secondary-foreground/70 mb-2 font-sans font-semibold">
               Contact
             </p>
-            <ul className="space-y-2 text-sm md:text-base">
+            <ul className="space-y-2 font-mono text-sm md:text-base">
               <li>
                 <a
                   href={siteConfig.github}
@@ -58,10 +60,10 @@ export const Footer = () => {
           </aside>
 
           <aside>
-            <p className="text-secondary-foreground/70 mb-2 font-sans font-medium">
+            <p className="text-secondary-foreground/70 mb-2 font-sans font-semibold">
               Navigation
             </p>
-            <ul className="space-y-2 text-sm md:text-base">
+            <ul className="space-y-2 font-mono text-sm md:text-base">
               <li>
                 <a
                   href="#home"
@@ -79,12 +81,12 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#projects"
+                <Link
+                  href={"/projects"}
                   className="hover:text-primary transition-all duration-300"
                 >
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -100,7 +102,7 @@ export const Footer = () => {
       </div>
 
       <p className="p-4 text-center text-xs sm:text-sm md:hidden">
-        &copy; 2025 Naing Htet Linn. All rights reserved.
+        &copy; {new Date().getFullYear()} Naing Htet Linn. All rights reserved.
       </p>
     </footer>
   );

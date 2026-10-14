@@ -30,6 +30,11 @@ export function getMDXComponents(components?: MDXComponents) {
         {children}
       </a>
     ),
+    strong: ({ children, ...props }) => (
+      <strong className="font-semibold" {...props}>
+        {children}
+      </strong>
+    ),
   } satisfies MDXComponents;
 }
 

@@ -15,7 +15,9 @@ export const Contacts = () => {
           >
             <LuMail className="size-6 md:size-7" />
             <div>
-              <h3>Email</h3>
+              <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
+                Email
+              </span>
               <span className="text-muted-foreground font-mono underline">
                 {siteConfig.email}
               </span>
@@ -30,7 +32,9 @@ export const Contacts = () => {
           >
             <LuGithub className="size-6 md:size-7" />
             <div>
-              <h3>Github</h3>
+              <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
+                Github
+              </span>
               <span className="text-muted-foreground font-mono underline">
                 nainghtetlinn
               </span>
@@ -45,7 +49,9 @@ export const Contacts = () => {
           >
             <FaXTwitter className="size-6 md:size-7" />
             <div>
-              <h3>X</h3>
+              <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
+                X
+              </span>
               <span className="text-muted-foreground font-mono underline">
                 naingdev
               </span>
@@ -60,7 +66,9 @@ export const Contacts = () => {
           >
             <LuLinkedin className="size-6 md:size-7" />
             <div>
-              <h3>LinkedIn</h3>
+              <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
+                LinkedIn
+              </span>
               <span className="text-muted-foreground font-mono underline">
                 naingdev
               </span>
@@ -75,7 +83,9 @@ export const Contacts = () => {
           >
             <RiTelegram2Line className="size-6 md:size-7" />
             <div>
-              <h3>Telegram</h3>
+              <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
+                Telegram
+              </span>
               <span className="text-muted-foreground font-mono underline">
                 naing_hl
               </span>

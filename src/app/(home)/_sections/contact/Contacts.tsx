@@ -14,7 +14,7 @@ export const Contacts = () => {
             className="flex items-center gap-4 md:gap-6"
           >
             <LuMail className="size-6 md:size-7" />
-            <div>
+            <div className="flex flex-col">
               <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
                 Email
               </span>
@@ -31,7 +31,7 @@ export const Contacts = () => {
             className="flex items-center gap-4 md:gap-6"
           >
             <LuGithub className="size-6 md:size-7" />
-            <div>
+            <div className="flex flex-col">
               <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
                 Github
               </span>
@@ -48,7 +48,7 @@ export const Contacts = () => {
             className="flex items-center gap-4 md:gap-6"
           >
             <FaXTwitter className="size-6 md:size-7" />
-            <div>
+            <div className="flex flex-col">
               <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
                 X
               </span>
@@ -65,7 +65,7 @@ export const Contacts = () => {
             className="flex items-center gap-4 md:gap-6"
           >
             <LuLinkedin className="size-6 md:size-7" />
-            <div>
+            <div className="flex flex-col">
               <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
                 LinkedIn
               </span>
@@ -82,7 +82,7 @@ export const Contacts = () => {
             className="flex items-center gap-4 md:gap-6"
           >
             <RiTelegram2Line className="size-6 md:size-7" />
-            <div>
+            <div className="flex flex-col">
               <span className="font-sans text-base font-medium md:text-lg lg:text-xl xl:text-2xl">
                 Telegram
               </span>

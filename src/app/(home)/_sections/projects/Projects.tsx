@@ -32,6 +32,7 @@ export const Projects = () => {
                 repo: page.repo,
                 url: page.url,
                 link: node.url,
+                tech: page.tech,
               }}
             />
           );
@@ -50,6 +51,7 @@ const ProjectArticle = ({
     repo?: string;
     url?: string;
     link: string;
+    tech?: string[];
   };
 }) => {
   return (
@@ -70,12 +72,28 @@ const ProjectArticle = ({
       </div>
 
       {/* Project Text */}
-      <div className="flex flex-col justify-center p-4 pb-8 md:p-8">
-        <h2>{project.name}</h2>
-        <p className="text-foreground/80 mt-4 text-justify">
-          {project.description}
-        </p>
-        <div className="mt-4 flex items-center gap-2 md:mt-6">
+      <div className="flex flex-col justify-center gap-4 p-4 pb-8 md:gap-6 md:p-8">
+        <div>
+          <h2>{project.name}</h2>
+          <p className="text-foreground/80 mt-4 text-justify">
+            {project.description}
+          </p>
+        </div>
+
+        {project.tech && (
+          <div className="flex flex-wrap items-center gap-x-1 md:gap-1.5">
+            {project.tech.map((t) => (
+              <div
+                key={t}
+                className="border-border bg-secondary text-secondary-foreground border px-2 py-1 font-mono text-xs font-medium tracking-widest"
+              >
+                {t}
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="flex items-center gap-2">
           <Button asChild variant={"default"}>
             <a href={project.link}>
               Overview

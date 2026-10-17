@@ -48,7 +48,7 @@ export const Education = () => {
         <p className="text-sm leading-tight">2021 - Present</p>
 
         <div className="mt-8 mb-4 flex items-center gap-4 md:gap-6">
-          <h5 className="bg-secondary text-secondary-foreground p-2">
+          <h5 className="bg-secondary text-secondary-foreground px-2.5 py-2 uppercase">
             Relevant Coursework
           </h5>
           <div className="bg-border h-px flex-1"></div>
@@ -66,7 +66,7 @@ export const Education = () => {
         </div>
 
         <div className="mt-8 mb-4 flex items-center gap-4 md:gap-6">
-          <h5 className="bg-secondary text-secondary-foreground p-2">
+          <h5 className="bg-secondary text-secondary-foreground px-2.5 py-2 uppercase">
             Academic Projects &amp; Leadership
           </h5>
           <div className="bg-border h-px flex-1"></div>

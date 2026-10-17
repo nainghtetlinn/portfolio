@@ -119,7 +119,7 @@
   }
 
   h5 {
-    @apply text-muted-foreground font-mono text-xs font-medium tracking-widest uppercase;
+    @apply text-muted-foreground font-mono text-xs font-medium tracking-widest;
   }
 
   p {

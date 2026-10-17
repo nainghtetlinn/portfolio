@@ -10,6 +10,7 @@ const projects = defineDocs({
       cover: z.string().optional(),
       repo: z.string().optional(),
       url: z.string().optional(),
+      tech: z.array(z.string()).optional(),
     }),
   },
   meta: {

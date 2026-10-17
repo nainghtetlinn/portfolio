@@ -5,7 +5,7 @@ export const Bio = () => {
   return (
     <section className="relative lg:flex lg:items-center">
       <article className="max-w-4xl px-4 md:px-8">
-        <p className="text-justify">
+        <p className="text-foreground/80 text-justify">
           &gt; Hello! I&apos;m Naing Htet Linn, a full-stack web developer and
           React Native developer with a strong foundation in building
           responsive, scalable applications. My journey in software development

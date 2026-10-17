@@ -115,7 +115,11 @@
   }
 
   h4 {
-    @apply font-sans;
+    @apply font-mono text-sm leading-normal font-normal tracking-normal md:text-base md:leading-8 lg:text-lg lg:leading-8 xl:text-xl xl:leading-9;
+  }
+
+  h5 {
+    @apply text-muted-foreground font-mono text-xs font-medium tracking-widest uppercase;
   }
 
   p {

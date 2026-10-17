@@ -6,10 +6,10 @@ const SKILLS = [
     label: "Frontend",
     prefix: "frontend",
     items: [
-      { name: "Typescript", icon: "TypeScript.svg" },
+      { name: "TypeScript", icon: "TypeScript.svg" },
       { name: "React.js", icon: "React.svg" },
       { name: "Next.js", icon: "Next.js.svg" },
-      { name: "ReactNative", icon: "React.svg" },
+      { name: "React Native", icon: "React.svg" },
       { name: "TailwindCSS", icon: "Tailwind CSS.svg" },
       { name: "Redux", icon: "Redux.svg" },
     ],
@@ -20,9 +20,9 @@ const SKILLS = [
     items: [
       { name: "Node.js", icon: "Node.js.svg" },
       { name: "Express", icon: "Express.svg" },
-      { name: "Nest.js", icon: "Nest.js.svg" },
+      { name: "NestJS", icon: "Nest.js.svg" },
       { name: "Java", icon: "Java.svg" },
-      { name: "SpringBoot", icon: "Spring.svg" },
+      { name: "Spring Boot", icon: "Spring.svg" },
     ],
   },
   {

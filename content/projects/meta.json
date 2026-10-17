@@ -13,7 +13,8 @@
   "featured": [
     "naingcn",
     "invitation_generator",
-    "talkichat",
-    "moviebookingsystem"
+    "tea_mixer_ai_server",
+    "tea_mixer_application",
+    "tea_mixer_firmware"
   ]
 }

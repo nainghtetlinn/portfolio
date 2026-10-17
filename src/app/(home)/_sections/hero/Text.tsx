@@ -73,7 +73,7 @@ export const Text = () => {
       <div className="mt-5 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
         <Button asChild variant={"default"} size={"lg"}>
           <a href={"#contact"}>
-            Lets Connect
+            Let&apos;s Connect
             <ArrowUpRight />
           </a>
         </Button>

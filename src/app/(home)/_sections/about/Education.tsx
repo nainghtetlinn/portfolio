@@ -82,12 +82,16 @@ export const Education = () => {
               )}
             >
               <div>
-                <p className="font-mono text-xs">{project.year}</p>
+                <p className="font-mono text-xs md:text-sm">{project.year}</p>
               </div>
               <div>
-                <p className="text-sm font-semibold">{project.title}</p>
-                <p className="mt-0.5 text-xs">{project.role}</p>
-                <p className="text-foreground/80 mt-2 text-sm leading-relaxed">
+                <p className="text-sm font-semibold md:text-base">
+                  {project.title}
+                </p>
+                <p className="mb-4 text-xs leading-tight md:text-sm">
+                  {project.role}
+                </p>
+                <p className="text-foreground/80 mt-2 text-justify text-sm leading-relaxed md:text-base">
                   {project.description}
                 </p>
               </div>

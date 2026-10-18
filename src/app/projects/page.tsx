@@ -1,5 +1,6 @@
-import { projectSource } from "@/lib/source";
+import { TechBadge } from "@/components/tech-badge";
 import { Button } from "@/components/ui/button";
+import { projectSource } from "@/lib/source";
 import Image from "next/image";
 import Link from "next/link";
 import { FiBookOpen, FiGithub, FiLink } from "react-icons/fi";
@@ -45,11 +46,22 @@ const Page = () => {
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="leading-tight font-semibold">{page.title}</h3>
-                  {page.description && (
-                    <p className="text-muted-foreground mt-2 flex-1 text-justify font-mono text-xs leading-relaxed sm:text-sm md:text-base">
-                      {page.description}
-                    </p>
-                  )}
+
+                  <div className="flex-1">
+                    {page.description && (
+                      <p className="text-muted-foreground mt-2 text-justify font-mono text-xs leading-relaxed sm:text-sm md:text-base">
+                        {page.description}
+                      </p>
+                    )}
+
+                    {page.tech && (
+                      <div className="mt-3 flex flex-wrap items-center gap-1 md:gap-1.5">
+                        {page.tech.map((t) => (
+                          <TechBadge key={t} tech={t} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
 
                   {/* Actions */}
                   <div className="mt-5 flex flex-wrap gap-2">

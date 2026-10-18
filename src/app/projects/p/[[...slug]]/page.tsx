@@ -1,4 +1,5 @@
 import { getMDXComponents } from "@/components/mdx";
+import { TechBadge } from "@/components/tech-badge";
 import { Button } from "@/components/ui/button";
 import { getRepoReadme, rewriteImageUrls } from "@/lib/github";
 import { projectSource } from "@/lib/source";
@@ -62,6 +63,14 @@ export default async function Page(
         />
       </div>
 
+      {page.data.tech && (
+        <div className="flex flex-wrap items-center gap-1 md:gap-1.5">
+          {page.data.tech.map((t) => (
+            <TechBadge key={t} tech={t} />
+          ))}
+        </div>
+      )}
+
       <div className="mb-8 flex items-center gap-4">
         <Button asChild variant={"outline"}>
           <a
@@ -82,6 +91,7 @@ export default async function Page(
           </Button>
         )}
       </div>
+
       <DocsBody>
         <Content
           components={getMDXComponents({

@@ -3,6 +3,7 @@ import { projectSource } from "@/lib/source";
 import Image from "next/image";
 import { FiBookOpen, FiGithub, FiLink } from "react-icons/fi";
 import { Background } from "./Background";
+import { TechBadge } from "@/components/tech-badge";
 
 export const Projects = () => {
   const tree = projectSource.getPageTree();
@@ -81,14 +82,9 @@ const ProjectArticle = ({
         </div>
 
         {project.tech && (
-          <div className="flex flex-wrap items-center gap-x-1 md:gap-1.5">
+          <div className="flex flex-wrap items-center gap-1 md:gap-1.5">
             {project.tech.map((t) => (
-              <div
-                key={t}
-                className="border-border bg-secondary text-secondary-foreground border px-2 py-1 font-mono text-xs font-medium tracking-widest"
-              >
-                {t}
-              </div>
+              <TechBadge key={t} tech={t} />
             ))}
           </div>
         )}

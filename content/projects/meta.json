@@ -3,18 +3,18 @@
   "pages": [
     "naingcn",
     "invitation_generator",
+    "moviebookingsystem",
     "tea_mixer_ai_server",
     "tea_mixer_application",
     "tea_mixer_firmware",
-    "moviebookingsystem",
     "talkichat",
     "asciiart"
   ],
   "featured": [
     "naingcn",
     "invitation_generator",
+    "moviebookingsystem",
     "tea_mixer_ai_server",
-    "tea_mixer_application",
-    "tea_mixer_firmware"
+    "tea_mixer_application"
   ]
 }

@@ -63,7 +63,7 @@ export const Text = () => {
       </h1>
 
       {/* Description */}
-      <p className="text-foreground/80 max-w-3xl text-justify">
+      <p className="text-foreground/80 mx-auto max-w-xl text-center md:mx-0 md:max-w-3xl md:text-justify">
         Software engineer from Myanmar with a passion for solving real-world
         problems using modern technologies.
       </p>

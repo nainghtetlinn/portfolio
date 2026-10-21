@@ -48,9 +48,14 @@ export const Education = () => {
         <p className="text-sm leading-tight">2021 - Present</p>
 
         <div className="mt-8 mb-4 flex items-center gap-4 md:gap-6">
-          <h5 className="bg-secondary text-secondary-foreground px-2.5 py-2 uppercase">
-            Relevant Coursework
-          </h5>
+          <Badge
+            asChild
+            variant={"secondary"}
+            size={"sm"}
+            className="uppercase"
+          >
+            <h5>Relevant Coursework</h5>
+          </Badge>
           <div className="bg-border h-px flex-1"></div>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -58,6 +63,7 @@ export const Education = () => {
             <Badge
               key={item}
               variant={"outline"}
+              size={"sm"}
               className="gap-2 px-4 py-2 font-mono text-xs lg:text-sm"
             >
               {item}
@@ -66,9 +72,14 @@ export const Education = () => {
         </div>
 
         <div className="mt-8 mb-4 flex items-center gap-4 md:gap-6">
-          <h5 className="bg-secondary text-secondary-foreground px-2.5 py-2 uppercase">
-            Academic Projects &amp; Leadership
-          </h5>
+          <Badge
+            asChild
+            variant={"secondary"}
+            size={"sm"}
+            className="uppercase"
+          >
+            <h5>Academic Projects &amp; Leadership</h5>
+          </Badge>
           <div className="bg-border h-px flex-1"></div>
         </div>
         <div className="divide-border divide-y">

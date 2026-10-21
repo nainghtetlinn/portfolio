@@ -66,6 +66,7 @@ export const Skills = () => {
                 <Badge
                   key={item.name}
                   variant={"outline"}
+                  size={"lg"}
                   className="gap-2 px-4 py-2 font-mono text-sm lg:text-base"
                 >
                   {item.icon && (

@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RotatingText from "@/components/ui/rotating-text";
 import env from "@/config/env";
@@ -17,26 +18,28 @@ export const Text = () => {
   return (
     <div className="w-full text-center md:flex-1 md:text-left">
       <div className="mb-4 inline-flex items-center gap-2">
-        <div
-          className="bg-background border-border shrink-0 border px-2 pb-0.5 md:px-3 md:pt-1 md:pb-1.5"
-          aria-label="Job availability status"
-        >
-          {/* animate-pulse uses opacity+scale — GPU-composited, no forced reflow */}
-          <span
-            className={cn(
-              "inline-block h-2 w-2 animate-ping rounded-full",
-              env.NEXT_PUBLIC_AVAILABLE_STATUS ? "bg-green-500" : "bg-red-500",
-            )}
-          />
-          <span
-            className="text-foreground/80 ml-2 font-mono text-xs md:text-sm"
-            aria-label={
-              env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"
-            }
-          >
-            {env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"}
-          </span>
-        </div>
+        <Badge asChild variant={"outline"} size={"sm"}>
+          <div aria-label="Job availability status">
+            {/* animate-pulse uses opacity+scale — GPU-composited, no forced reflow */}
+            <span
+              className={cn(
+                "inline-block h-2 w-2 animate-ping rounded-full",
+                env.NEXT_PUBLIC_AVAILABLE_STATUS
+                  ? "bg-green-500"
+                  : "bg-red-500",
+              )}
+            />
+            <span
+              className="text-foreground/80 ml-2 font-mono text-xs font-normal md:text-sm"
+              aria-label={
+                env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"
+              }
+            >
+              {env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"}
+            </span>
+          </div>
+        </Badge>
+
         <div className="bg-border h-px w-12" />
         <RotatingText
           aria-label={ROLES.join(", ")}

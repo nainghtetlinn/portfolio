@@ -10,6 +10,7 @@ import { MobileNavMenu } from "./mobile-nav-menu";
 import { NavbarBackdrop } from "./navbar-backdrop";
 import { ThemeToggleBtn } from "./theme-toggle-btn";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export const Navbar = () => {
   const { scrollY } = useScroll();
@@ -50,50 +51,60 @@ export const Navbar = () => {
             </a>
 
             {/* Nav links */}
-            <ul className="hidden items-center gap-6 md:flex">
+            <ul className="hidden items-center gap-4 md:flex lg:gap-6">
               <li>
-                <a
-                  href={"/"}
-                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                <Button
+                  asChild
+                  variant={"ghost"}
+                  size={"lg"}
+                  className="font-sans font-normal"
                 >
-                  Home
-                </a>
+                  <a href={"/"}>Home</a>
+                </Button>
               </li>
               <li>
-                <a
-                  href={"/#about"}
-                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                <Button
+                  asChild
+                  variant={"ghost"}
+                  size={"lg"}
+                  className="font-sans font-normal"
                 >
-                  About
-                </a>
+                  <a href={"/#about"}>About</a>
+                </Button>
               </li>
               <li>
-                <Link
-                  href={"/projects"}
-                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                <Button
+                  asChild
+                  variant={"ghost"}
+                  size={"lg"}
+                  className="font-sans font-normal"
                 >
-                  Projects
-                </Link>
+                  <Link href={"/projects"}>Projects</Link>
+                </Button>
               </li>
               <li>
-                <a
-                  href={"/#contact"}
-                  className="hover:text-primary hover:bg-accent cursor-pointer p-2 transition-all duration-300"
+                <Button
+                  asChild
+                  variant={"ghost"}
+                  size={"lg"}
+                  className="font-sans font-normal"
                 >
-                  Contact
-                </a>
+                  <a href={"/#contact"}>Contact</a>
+                </Button>
               </li>
             </ul>
 
             <div className="flex items-center gap-6">
               {/* Github */}
-              <a
-                href={siteConfig.github}
-                aria-label="Github account url"
-                className="hover:text-primary py-4 transition-all duration-300"
-              >
-                <FiGithub className="size-5" />
-              </a>
+              <Button asChild variant={"ghost"} size={"icon"}>
+                <a
+                  href={siteConfig.github}
+                  target="_blank"
+                  aria-label="Github account url"
+                >
+                  <FiGithub className="size-5" />
+                </a>
+              </Button>
 
               {/* Theme Toggle */}
               <ThemeToggleBtn />

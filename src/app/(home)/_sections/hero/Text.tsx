@@ -64,10 +64,8 @@ export const Text = () => {
 
       {/* Description */}
       <p className="text-foreground/80 max-w-3xl text-justify">
-        &gt; Software engineer from Myanmar with a passion for solving
-        real-world problems using modern technologies. <br />
-        &gt; My core stack includes React, Next.js, Node.js, Nest.js,
-        ReactNative, PostgreSQL and TypeScript.
+        Software engineer from Myanmar with a passion for solving real-world
+        problems using modern technologies.
       </p>
 
       <div className="mt-5 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">

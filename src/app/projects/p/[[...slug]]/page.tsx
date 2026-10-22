@@ -76,6 +76,9 @@ export default async function Page(
           <a
             href={`https://github.com/nainghtetlinn/${page.data.repo}`}
             target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="Github repository button"
+            data-umami-event-id={page.data.repo}
           >
             Github
             <FiGithub />
@@ -84,7 +87,13 @@ export default async function Page(
 
         {page.data.url && (
           <Button asChild variant={"outline"}>
-            <a href={page.data.url} target="_blank">
+            <a
+              href={page.data.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event="Demo button"
+              data-umami-event-id={page.data.url}
+            >
               Live Demo
               <FiLink />
             </a>

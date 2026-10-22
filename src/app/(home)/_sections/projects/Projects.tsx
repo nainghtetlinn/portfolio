@@ -27,7 +27,7 @@ export const Projects = () => {
             <ProjectArticle
               key={page.title}
               project={{
-                name: page.title ?? "unknown",
+                title: page.title ?? "unknown",
                 description: page.description,
                 image: page.cover ?? "/cover.webp",
                 repo: page.repo,
@@ -46,7 +46,7 @@ const ProjectArticle = ({
   project,
 }: {
   project: {
-    name: string;
+    title: string;
     description?: string;
     image: string;
     repo?: string;
@@ -63,7 +63,7 @@ const ProjectArticle = ({
         <div className="relative aspect-video w-full max-w-md overflow-hidden border shadow-2xl/40">
           <Image
             src={project.image}
-            alt={project.name}
+            alt={project.title}
             fill
             sizes="(max-width: 448px) 100vw, 448px"
             className="object-cover object-top-left"
@@ -75,7 +75,7 @@ const ProjectArticle = ({
       {/* Project Text */}
       <div className="flex flex-col justify-center gap-4 p-4 pb-8 md:gap-6 md:p-8">
         <div>
-          <h2>{project.name}</h2>
+          <h2>{project.title}</h2>
           <p className="text-foreground/80 mt-4 text-justify">
             {project.description}
           </p>
@@ -91,7 +91,11 @@ const ProjectArticle = ({
 
         <div className="flex items-center gap-2">
           <Button asChild variant={"default"}>
-            <a href={project.link}>
+            <a
+              href={project.link}
+              data-umami-event="Overview button"
+              data-umami-event-id={project.title}
+            >
               Overview
               <FiBookOpen />
             </a>
@@ -101,6 +105,9 @@ const ProjectArticle = ({
               <a
                 href={`https://github.com/nainghtetlinn/${project.repo}`}
                 target="_blank"
+                rel="noopener noreferrer"
+                data-umami-event="Github repository button"
+                data-umami-event-id={project.repo}
               >
                 Code
                 <FiGithub />
@@ -109,7 +116,13 @@ const ProjectArticle = ({
           )}
           {project.url && (
             <Button asChild variant={"outline"}>
-              <a href={project.url} target="_blank">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-umami-event="Demo button"
+                data-umami-event-id={project.url}
+              >
                 Demo
                 <FiLink />
               </a>

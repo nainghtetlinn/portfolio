@@ -66,7 +66,11 @@ const Page = () => {
                   {/* Actions */}
                   <div className="mt-5 flex flex-wrap gap-2">
                     <Button asChild size="sm">
-                      <Link href={node.url}>
+                      <Link
+                        href={node.url}
+                        data-umami-event="Overview button"
+                        data-umami-event-id={page.title}
+                      >
                         Overview
                         <FiBookOpen />
                       </Link>
@@ -78,6 +82,8 @@ const Page = () => {
                           href={`https://github.com/nainghtetlinn/${page.repo}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-umami-event="Github repository button"
+                          data-umami-event-id={page.repo}
                         >
                           Code
                           <FiGithub />
@@ -91,6 +97,8 @@ const Page = () => {
                           href={page.url}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-umami-event="Demo button"
+                          data-umami-event-id={page.url}
                         >
                           Demo
                           <FiLink />

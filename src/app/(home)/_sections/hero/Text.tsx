@@ -65,7 +65,12 @@ export const Text = () => {
             <ArrowUpRight />
           </a>
         </Button>
-        <Button asChild variant={"outline"} size={"lg"}>
+        <Button
+          asChild
+          variant={"outline"}
+          size={"lg"}
+          data-umami-event="Resume button"
+        >
           <Link href={"/resume.pdf"} prefetch={false}>
             Download resume
             <Download />

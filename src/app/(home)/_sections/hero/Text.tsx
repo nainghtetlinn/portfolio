@@ -19,9 +19,9 @@ export const Text = () => {
     <div className="w-full space-y-6 text-center md:flex-1 md:text-left">
       <div className="inline-flex items-center gap-2">
         <Badge asChild variant={"outline"} size={"sm"}>
-          <div aria-label="Job availability status">
+          <div className="space-x-2" aria-label="Job availability status">
             <span
-              className="text-foreground/80 ml-2 font-mono text-xs font-normal md:text-sm"
+              className="text-foreground/80 font-mono text-xs font-normal md:text-sm"
               aria-label={
                 env.NEXT_PUBLIC_AVAILABLE_STATUS ? "Available" : "Unavailable"
               }

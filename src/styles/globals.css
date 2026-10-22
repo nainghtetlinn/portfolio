@@ -123,7 +123,7 @@
   }
 
   p {
-    @apply font-mono text-sm leading-normal font-normal tracking-normal md:text-base md:leading-8 lg:text-lg lg:leading-8 xl:text-xl xl:leading-9;
+    @apply font-mono text-sm leading-6 font-normal tracking-normal md:text-base md:leading-7 lg:text-lg lg:leading-8 xl:text-xl xl:leading-9;
   }
 
   /* Force hide default cursor on all elements */

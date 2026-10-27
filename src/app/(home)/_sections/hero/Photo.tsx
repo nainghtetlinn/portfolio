@@ -56,7 +56,7 @@ export const Photo = () => {
             fill
             priority
             fetchPriority="high"
-            sizes="(max-width: 640px) 328px, (max-width: 1024px) 360px, (max-width: 1280px) 400px, 424px"
+            sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, (max-width: 1280px) 380px, 400px"
             className="object-cover"
           />
         </div>

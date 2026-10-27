@@ -1,18 +1,17 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import RotatingText from "@/components/ui/rotating-text";
 import env from "@/config/env";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, Download } from "lucide-react";
 import Link from "next/link";
+import { LuArrowUpRight, LuDownload } from "react-icons/lu";
 
-const ROLES = [
-  "Full-Stack Developer",
-  "Frontend Developer",
-  "Backend Developer",
-  "React-Native Developer",
-  "Software Engineer",
-];
+// const ROLES = [
+//   "Full-Stack Developer",
+//   "Frontend Developer",
+//   "Backend Developer",
+//   "React-Native Developer",
+//   "Software Engineer",
+// ];
 
 export const Text = () => {
   return (
@@ -62,18 +61,18 @@ export const Text = () => {
         <Button asChild variant={"default"} size={"lg"}>
           <a href={"#contact"}>
             Let&apos;s Connect
-            <ArrowUpRight />
+            <LuArrowUpRight />
           </a>
         </Button>
         <Button
           asChild
-          variant={"outline"}
+          variant={"secondary"}
           size={"lg"}
           data-umami-event="Resume button"
         >
           <Link href={"/resume.pdf"} prefetch={false}>
             Download resume
-            <Download />
+            <LuDownload />
           </Link>
         </Button>
       </div>

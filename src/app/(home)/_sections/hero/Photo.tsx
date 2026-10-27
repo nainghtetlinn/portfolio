@@ -49,35 +49,35 @@ export const Photo = () => {
       className="relative"
     >
       <div className="relative overflow-hidden rounded-lg">
-        <div className="relative aspect-square w-72 lg:w-78 xl:w-96">
+        <div className="relative aspect-square w-72 lg:w-80 xl:w-96">
           <Image
             src={"/profile.webp"}
             alt="Naing Htet Linn profile picture"
+            fill
             priority
             fetchPriority="high"
-            fill
-            sizes="(max-width: 1024px) 100vw"
+            sizes="(max-width: 1024px) 288px, (max-width: 1280px) 320px, 384px"
             className="object-cover"
           />
         </div>
 
-        <div className="absolute top-16 right-2 xl:top-20 xl:right-4">
+        <div className="absolute top-16 right-2 lg:top-18 xl:top-22 xl:right-4">
           <span className="bg-primary text-primary-foreground block rotate-6 rounded px-1.5 py-0.5 text-xs font-medium text-wrap">
             Serious Eyes
           </span>
         </div>
 
-        <div className="absolute top-18 right-14 md:right-14 lg:top-20 lg:right-12 xl:top-26 xl:right-14">
+        <div className="absolute top-18 right-14 md:right-14 lg:top-21 lg:right-13 xl:top-26 xl:right-14">
           <ArrowIcon className="w-12 scale-x-[-1] -rotate-180 lg:w-16 xl:w-20" />
         </div>
 
-        <div className="absolute top-32 left-2 lg:left-4 xl:top-40 xl:left-8">
+        <div className="absolute top-33 left-2 lg:top-36 lg:left-4 xl:top-42 xl:left-8">
           <span className="bg-primary text-primary-foreground block -rotate-8 rounded px-1.5 py-0.5 text-xs font-medium text-wrap">
             Dev Jacket
           </span>
         </div>
 
-        <div className="absolute top-36 left-12 xl:top-48 xl:left-14">
+        <div className="absolute top-36 left-12 lg:top-40 xl:top-48 xl:left-14">
           <ArrowIcon className="w-12 -rotate-160 lg:w-16 xl:w-20" />
         </div>
       </div>

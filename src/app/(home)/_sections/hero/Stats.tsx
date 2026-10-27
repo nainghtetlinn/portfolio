@@ -1,6 +1,6 @@
 import { CountUp } from "@/components/ui/count-up";
 import { cn } from "@/lib/utils";
-import { ArrowDownSquareIcon } from "lucide-react";
+import { LuSquareArrowDown } from "react-icons/lu";
 
 export const Stats = () => {
   return (
@@ -34,7 +34,7 @@ export const Stats = () => {
       </div>
       <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 md:inline-flex">
         <span className="font-mono text-sm">SCROLL DOWN</span>
-        <ArrowDownSquareIcon className="size-5" />
+        <LuSquareArrowDown className="size-5" />
       </div>
     </div>
   );

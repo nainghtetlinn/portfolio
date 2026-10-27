@@ -15,8 +15,12 @@ import { ThemeProvider } from "@/providers/theme-provider";
 // CursorLoader is a thin Client Component that lazy-loads CustomCursor with
 // ssr: false — this is required because dynamic({ ssr: false }) can only live
 // inside a Client Component, not directly in a Server Component.
-import { Navbar } from "@/components/navbar";
 import { CursorLoader } from "@/components/ui/cursor-loader";
+
+const Navbar = dynamic(
+  () => import("@/components/navbar").then((m) => ({ default: m.Navbar })),
+  { loading: () => <div className="h-20" /> },
+);
 
 const Footer = dynamic(
   () => import("@/components/footer").then((m) => ({ default: m.Footer })),
@@ -82,7 +86,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <Navbar />

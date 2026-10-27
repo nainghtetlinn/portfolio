@@ -49,35 +49,35 @@ export const Photo = () => {
       className="relative"
     >
       <div className="relative overflow-hidden rounded-lg">
-        <div className="relative aspect-square w-72 sm:w-80 lg:w-86 xl:w-96">
+        <div className="relative aspect-square w-72 sm:w-80 lg:w-90 xl:w-96">
           <Image
             src={"/profile.webp"}
             alt="Naing Htet Linn profile picture"
             fill
             priority
             fetchPriority="high"
-            sizes="(max-width: 640px) 320px, (max-width: 1024px) 344px, (max-width: 1280px) 384px, 450px"
+            sizes="(max-width: 640px) 328px, (max-width: 1024px) 360px, (max-width: 1280px) 400px, 424px"
             className="object-cover"
           />
         </div>
 
-        <div className="absolute top-18 right-2 sm:top-21 md:top-19 lg:top-19 xl:top-23 xl:right-4">
+        <div className="absolute top-17 right-2 sm:top-19 sm:right-3 md:top-17 lg:top-20 xl:top-21 xl:right-5">
           <span className="bg-primary text-primary-foreground block rotate-6 rounded px-1.5 py-0.5 text-xs font-medium text-wrap">
             Serious Eyes
           </span>
         </div>
 
-        <div className="absolute top-20 right-14 sm:top-23 md:right-12 lg:top-24 xl:top-28 xl:right-14">
-          <ArrowIcon className="w-12 scale-x-[-1] -rotate-180 sm:w-14 md:w-16 lg:w-18 xl:w-20" />
+        <div className="absolute top-19 right-14 sm:top-22 sm:right-15 md:top-21 md:right-13 lg:top-25 lg:right-14 xl:top-27 xl:right-15">
+          <ArrowIcon className="w-12 scale-x-[-1] -rotate-185 sm:w-14 md:w-16 lg:w-18 xl:w-20" />
         </div>
 
-        <div className="absolute top-35 left-2 sm:top-40 sm:left-4 md:top-38 lg:top-39 lg:left-4 xl:top-44 xl:left-8">
+        <div className="absolute top-35 left-2 sm:top-38 sm:left-4 md:top-36 md:left-4 lg:top-43 lg:left-6 xl:top-44 xl:left-7">
           <span className="bg-primary text-primary-foreground block -rotate-8 rounded px-1.5 py-0.5 text-xs font-medium text-wrap">
             Dev Jacket
           </span>
         </div>
 
-        <div className="absolute top-38 left-12 sm:top-44 md:left-10 lg:top-46 xl:top-52 xl:left-14">
+        <div className="absolute top-38 left-12 sm:top-42 sm:left-13 md:top-42 md:left-12 lg:top-50 lg:left-12 xl:top-52 xl:left-12">
           <ArrowIcon className="w-12 -rotate-160 sm:w-14 md:w-16 lg:w-18 xl:w-20" />
         </div>
       </div>

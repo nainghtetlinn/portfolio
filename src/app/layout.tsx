@@ -74,7 +74,7 @@ export default function RootLayout({
           as="image"
           href="/profile.webp"
           fetchPriority="high"
-          imageSizes="(max-width: 1024px) 288px, (max-width: 1280px) 312px, 384px"
+          imageSizes="(max-width: 640px) 288px, (max-width: 1024px) 320px, (max-width: 1280px) 360px, 384px"
         />
       </head>
       <body

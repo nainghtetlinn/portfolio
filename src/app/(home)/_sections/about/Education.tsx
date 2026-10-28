@@ -22,7 +22,7 @@ const PROJECTS = [
   {
     year: "4th Year",
     title: "Student Registration System",
-    role: "Project Manager & Lead Developer · 2 members",
+    role: "Project Manager & Frontend Developer · 2 members",
     description:
       "Made key architectural decisions across user flow, admin flow, registration flow, and security — all of which directly shaped the outcome of the project. Handled UI/UX, frontend, backend, and database design end-to-end.",
   },

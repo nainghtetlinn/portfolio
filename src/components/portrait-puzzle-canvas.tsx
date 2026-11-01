@@ -103,7 +103,8 @@ function randomScrambledPosition(): THREE.Vector3 {
   const pos = new THREE.Vector3();
 
   for (let i = 0; i < 100; i++) {
-    const phi = (0.35 + Math.random() * 0.3) * Math.PI;
+    let phi = Math.acos(2 * Math.random() - 1);
+    phi = Math.max(0.1, Math.min(Math.PI - 0.1, phi));
     const theta = Math.random() * 2 * Math.PI;
     sph.set(SOLVED_DISTANCE, phi, theta);
     pos.setFromSpherical(sph);
@@ -129,6 +130,7 @@ function updateBillboardPositions(
   triOffsets: Float32Array,
   depths: Float32Array,
   camera: THREE.Camera,
+  alignmentFactor: number, // 0 = fully scrambled, 1 = perfectly aligned
 ): void {
   camera.updateMatrixWorld();
   const me = camera.matrixWorld.elements;
@@ -143,9 +145,16 @@ function updateBillboardPositions(
   const triCount = depths.length;
   const invSolvedDist = 1 / SOLVED_DISTANCE;
 
+  // Use a cubic ease-in curve so the pieces stay close to their original sizes
+  // until the user gets very close to the solved angle.
+  const scaleLerp = alignmentFactor * alignmentFactor * alignmentFactor;
+
   for (let tri = 0; tri < triCount; tri++) {
     const z = depths[tri];
-    const pScale = (SOLVED_DISTANCE - z) * invSolvedDist;
+    const targetScale = (SOLVED_DISTANCE - z) * invSolvedDist;
+
+    // Interpolate between original scale (1.0) and the forced-perspective scale
+    const pScale = 1.0 + (targetScale - 1.0) * scaleLerp;
 
     const cx = triCenterX[tri] * pScale;
     const cy = triCenterY[tri] * pScale;
@@ -301,7 +310,6 @@ function usePuzzleData(url: string, initialCameraPos: THREE.Vector3) {
         )
           continue;
 
-        // Use instance method instead of deprecated SVGLoader.createShapes
         const shapes = path.toShapes();
 
         for (const shape of shapes) {
@@ -380,10 +388,13 @@ function usePuzzleData(url: string, initialCameraPos: THREE.Vector3) {
       const currentDepths = generateScatteredDepths(triangleCount);
       const initialPositions = new Float32Array(triangleCount * 9);
 
-      // Temporary camera strictly to generate exact initial layout matching start state
       const tempCamera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
       tempCamera.position.copy(initialCameraPos);
       tempCamera.lookAt(0, 0, 0);
+
+      // Determine initial alignment factor
+      const initialAngle = initialCameraPos.angleTo(SOLVED_POS);
+      const initialAlignment = Math.max(0, 1 - initialAngle / Math.PI);
 
       updateBillboardPositions(
         initialPositions,
@@ -392,6 +403,7 @@ function usePuzzleData(url: string, initialCameraPos: THREE.Vector3) {
         offsets,
         currentDepths,
         tempCamera,
+        initialAlignment,
       );
 
       if (abortCtrl.signal.aborted) return;
@@ -436,7 +448,6 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
 
     const { geoData, geoRef } = usePuzzleData("/game.svg", startPos);
 
-    // Keep all animation logic completely out of React state
     const puzzle = useRef({
       phase: "scattered" as Phase,
       animStart: 0,
@@ -502,6 +513,10 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
       if (pz.phase === "scattered") {
         if (pz.lastCamPos.distanceToSquared(camera.position) > 1e-10) {
           pz.lastCamPos.copy(camera.position);
+
+          const angle = camera.position.angleTo(SOLVED_POS);
+          const alignmentFactor = Math.max(0, 1 - angle / Math.PI);
+
           updateBillboardPositions(
             arr,
             geoData.triCenterX,
@@ -509,6 +524,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
             geoData.triOffsets,
             geoData.currentDepths,
             camera,
+            alignmentFactor,
           );
           posAttr.needsUpdate = true;
         }
@@ -543,6 +559,9 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           geoData.currentDepths[i] = fromD[i] + (toD[i] - fromD[i]) * t;
         }
 
+        const angle = camera.position.angleTo(SOLVED_POS);
+        const alignmentFactor = Math.max(0, 1 - angle / Math.PI);
+
         updateBillboardPositions(
           arr,
           geoData.triCenterX,
@@ -550,6 +569,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           geoData.triOffsets,
           geoData.currentDepths,
           camera,
+          alignmentFactor,
         );
         posAttr.needsUpdate = true;
 
@@ -569,6 +589,10 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
             geoData.currentDepths.set(pz.animToDepths);
             camera.position.copy(pz.cameraTo);
             camera.lookAt(0, 0, 0);
+
+            const finalAngle = camera.position.angleTo(SOLVED_POS);
+            const finalAlignment = Math.max(0, 1 - finalAngle / Math.PI);
+
             updateBillboardPositions(
               arr,
               geoData.triCenterX,
@@ -576,6 +600,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
               geoData.triOffsets,
               geoData.currentDepths,
               camera,
+              finalAlignment,
             );
             posAttr.needsUpdate = true;
             pz.lastCamPos.copy(camera.position);

@@ -17,7 +17,7 @@ import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 /*  Constants                                                             */
 /* ====================================================================== */
 
-const SOLVED_DISTANCE = 12;
+const SOLVED_DISTANCE = 10;
 const SOLVED_POS = new THREE.Vector3(0, 0, SOLVED_DISTANCE);
 const SNAP_THRESHOLD = 0.045; // radians (~2.5°)
 const SOLVE_DURATION = 0.65; // seconds

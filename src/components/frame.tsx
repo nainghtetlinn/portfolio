@@ -8,7 +8,7 @@ export const Frame = ({
   return (
     <div className={cn("relative", className)}>
       <div className="relative h-full w-full p-px">
-        <div className="absolute inset-0 z-30">
+        <div className="pointer-events-none absolute inset-0 z-30">
           <svg
             className="h-full w-full"
             viewBox="0 0 250 250"

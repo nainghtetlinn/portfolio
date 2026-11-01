@@ -647,7 +647,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           enabled={controlsEnabled}
           enableZoom={false}
           enablePan={false}
-          enableAnimations={true} // equivalent behavior to enableDamping
+          enableAnimations={false}
           dampingFactor={0.06}
           target={[0, 0, 0]}
         />

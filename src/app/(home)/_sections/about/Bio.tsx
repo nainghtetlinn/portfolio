@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import confetti from "canvas-confetti";
 import { LuMove, LuShuffle, LuSkipForward } from "react-icons/lu";
 import { Frame } from "@/components/frame";
 import type { PortraitPuzzleCanvasHandle } from "@/components/portrait-puzzle-canvas";
@@ -26,6 +27,7 @@ export const Bio = () => {
   const [alignment, setAlignment] = useState(0);
   const [isSolved, setIsSolved] = useState(false);
   const [showHint, setShowHint] = useState(true);
+  const [showSolvedBanner, setShowSolvedBanner] = useState(false);
 
   // Only mount the canvas once the frame scrolls into view (perf).
   useEffect(() => {
@@ -46,7 +48,36 @@ export const Bio = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSolved = useCallback(() => setIsSolved(true), []);
+  const handleSolved = useCallback(() => {
+    setIsSolved(true);
+    setShowSolvedBanner(true);
+
+    // Fire confetti from the frame's center
+    const el = containerRef.current;
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const x = (rect.left + rect.width / 2) / window.innerWidth;
+      const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+      const burst = (angle: number, spread: number) =>
+        confetti({
+          particleCount: 50,
+          angle,
+          spread,
+          origin: { x, y },
+          colors: ["#fbbf24", "#f97316", "#ef4444", "#8b5cf6", "#3b82f6"],
+          gravity: 0.8,
+          ticks: 120,
+          disableForReducedMotion: true,
+        });
+
+      burst(60, 55);
+      burst(120, 55);
+    }
+
+    // Auto-hide the banner after 2s
+    setTimeout(() => setShowSolvedBanner(false), 2000);
+  }, []);
   const handleAlignment = useCallback((pct: number) => setAlignment(pct), []);
 
   const handleFirstInteract = useCallback(() => {
@@ -109,10 +140,19 @@ export const Bio = () => {
             <div className="pointer-events-none absolute inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-black/40 backdrop-blur-[2px] transition-opacity duration-500">
               <LuMove className="h-8 w-8 animate-pulse text-white/90" />
               <span className="text-sm font-medium text-white/90 select-none">
-                Drag to explore
+                Drag to solve
               </span>
             </div>
           )}
+
+          {/* Solved celebration banner */}
+          <div
+            className={`pointer-events-none absolute inset-0 z-40 flex items-center justify-center transition-opacity duration-500 ${showSolvedBanner ? "opacity-100" : "opacity-0"}`}
+          >
+            <span className="rounded-lg bg-black/50 px-4 py-2 text-lg font-bold text-white backdrop-blur-sm select-none">
+              Solved!
+            </span>
+          </div>
 
           <div className="absolute right-4 bottom-4 z-30 flex items-center gap-1">
             {/* Alignment percentage */}

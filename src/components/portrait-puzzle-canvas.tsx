@@ -10,7 +10,7 @@ import {
 } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { ArcballControls } from "@react-three/drei";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 
 /* ====================================================================== */
@@ -19,7 +19,7 @@ import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 
 const SOLVED_DISTANCE = 10;
 const SOLVED_POS = new THREE.Vector3(0, 0, SOLVED_DISTANCE);
-const SNAP_THRESHOLD = 0.045; // radians (~2.5°)
+const SNAP_THRESHOLD = 0.035; // radians (~2°)
 const SOLVE_DURATION = 0.65; // seconds
 const MIN_SCRAMBLE_ANGLE = (60 * Math.PI) / 180; // 60° in radians
 
@@ -455,6 +455,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
       animToDepths: new Float32Array(0),
       cameraFrom: new THREE.Vector3(),
       cameraTo: new THREE.Vector3(),
+      cameraUpFrom: new THREE.Vector3(),
       lastPercent: -1,
       lastCamPos: new THREE.Vector3().copy(startPos),
     });
@@ -476,6 +477,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
       );
       puzzle.current.cameraFrom.copy(camera.position);
       puzzle.current.cameraTo.copy(SOLVED_POS);
+      puzzle.current.cameraUpFrom.copy(camera.up);
 
       setControlsEnabled(false);
     };
@@ -495,6 +497,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
       );
       puzzle.current.cameraFrom.copy(camera.position);
       puzzle.current.cameraTo.copy(randomScrambledPosition());
+      puzzle.current.cameraUpFrom.copy(camera.up);
     };
 
     useImperativeHandle(ref, () => ({
@@ -551,6 +554,12 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           SOLVED_DISTANCE,
           camera.position,
         );
+
+        camera.up
+          .copy(pz.cameraUpFrom)
+          .lerp(new THREE.Vector3(0, 1, 0), t)
+          .normalize();
+
         camera.lookAt(0, 0, 0);
 
         const fromD = pz.animFromDepths;
@@ -577,6 +586,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           if (pz.phase === "solving") {
             geoData.currentDepths.fill(0);
             camera.position.copy(SOLVED_POS);
+            camera.up.set(0, 1, 0);
             camera.lookAt(0, 0, 0);
             arr.set(geoData.flatPos);
             posAttr.needsUpdate = true;
@@ -588,6 +598,7 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           } else {
             geoData.currentDepths.set(pz.animToDepths);
             camera.position.copy(pz.cameraTo);
+            camera.up.set(0, 1, 0);
             camera.lookAt(0, 0, 0);
 
             const finalAngle = camera.position.angleTo(SOLVED_POS);
@@ -632,14 +643,12 @@ const PuzzleScene = forwardRef<PortraitPuzzleCanvasHandle, InnerSceneProps>(
           </bufferGeometry>
           <meshBasicMaterial vertexColors side={THREE.DoubleSide} />
         </mesh>
-        <OrbitControls
+        <ArcballControls
           enabled={controlsEnabled}
           enableZoom={false}
           enablePan={false}
-          enableDamping
+          enableAnimations={true} // equivalent behavior to enableDamping
           dampingFactor={0.06}
-          autoRotate={!hasInteracted}
-          autoRotateSpeed={1.2}
           target={[0, 0, 0]}
         />
       </>

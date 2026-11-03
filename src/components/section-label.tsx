@@ -46,7 +46,7 @@ export const SectionLabel = ({ num, text }: { num: string; text: string }) => {
 
       {/* Right-sliding Background Text */}
       <span
-        className={`text-foreground/15 pointer-events-none absolute right-0 -bottom-1/3 hidden text-7xl font-black transition-all delay-100 duration-700 sm:block md:text-8xl lg:text-9xl ${springEase} ${
+        className={`text-foreground/15 dark:text-foreground/5 pointer-events-none absolute right-0 -bottom-1/3 hidden text-7xl font-black transition-all delay-100 duration-700 sm:block md:text-8xl lg:text-9xl ${springEase} ${
           isInView ? "translate-x-0 opacity-100" : "translate-x-15 opacity-0"
         }`}
       >

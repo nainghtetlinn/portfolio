@@ -9,7 +9,6 @@ const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "production"]).default("development"),
     NEXT_RUNTIME: z.enum(["nodejs", "edge"]).default("nodejs"),
-    UMAMI_API_KEY: z.string().min(1),
   },
   /*
    * Environment variables available on the client (and server).
@@ -19,6 +18,10 @@ const env = createEnv({
   client: {
     NEXT_PUBLIC_APP_URL: z.url().default("http://localhost:3000"),
     NEXT_PUBLIC_GITHUB_USERNAME: z.string().min(1),
+    NEXT_PUBLIC_LINKEDIN_USERNAME: z.string().min(1),
+    NEXT_PUBLIC_TWITTER_USERNAME: z.string().min(1),
+    NEXT_PUBLIC_TELEGRAM_USERNAME: z.string().min(1),
+    NEXT_PUBLIC_EMAIL_ADDRESS: z.email(),
     NEXT_PUBLIC_AVAILABLE_STATUS: z.coerce.boolean(),
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().min(1),
   },
@@ -32,9 +35,12 @@ const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_RUNTIME: process.env.NEXT_RUNTIME,
-    UMAMI_API_KEY: process.env.UMAMI_API_KEY,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_GITHUB_USERNAME: process.env.NEXT_PUBLIC_GITHUB_USERNAME,
+    NEXT_PUBLIC_LINKEDIN_USERNAME: process.env.NEXT_PUBLIC_LINKEDIN_USERNAME,
+    NEXT_PUBLIC_TWITTER_USERNAME: process.env.NEXT_PUBLIC_TWITTER_USERNAME,
+    NEXT_PUBLIC_TELEGRAM_USERNAME: process.env.NEXT_PUBLIC_TELEGRAM_USERNAME,
+    NEXT_PUBLIC_EMAIL_ADDRESS: process.env.NEXT_PUBLIC_EMAIL_ADDRESS,
     NEXT_PUBLIC_AVAILABLE_STATUS: process.env.NEXT_PUBLIC_AVAILABLE_STATUS,
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
   },

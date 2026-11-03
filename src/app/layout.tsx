@@ -36,10 +36,16 @@ export const metadata: Metadata = {
     "developer portfolio",
     "creative",
     "fullstack",
+    "frontend",
+    "backend",
     "typescript",
     "nestjs",
     "nextjs",
     "reactjs",
+    "reactnative",
+    "expo",
+    "restful api",
+    "websockets",
   ],
 
   openGraph: {

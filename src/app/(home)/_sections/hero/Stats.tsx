@@ -7,10 +7,10 @@ export const Stats = () => {
     <div className="relative">
       <div className="bg-background grid grid-cols-2 md:max-w-3/4 lg:grid-cols-4">
         {[
-          { label: "Years of Experience", value: 4 },
-          { label: "Projects Shipped", value: 8 },
-          { label: "Happy Clients", value: 1 },
-          { label: "Open Source", value: 1 },
+          { label: "Years Building", value: 4 },
+          { label: "Year Freelance", value: 1 },
+          { label: "Projects Shipped", value: 9 },
+          { label: "Tools & Tech", value: 25 },
         ].map((stat, i) => (
           <div
             key={i}

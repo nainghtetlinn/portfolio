@@ -93,10 +93,10 @@ const ProjectArticle = ({
           <Button asChild variant={"default"}>
             <a
               href={project.link}
-              data-umami-event="Overview button"
+              data-umami-event="Case study button"
               data-umami-event-id={project.title}
             >
-              Overview
+              Case Study
               <FiBookOpen />
             </a>
           </Button>

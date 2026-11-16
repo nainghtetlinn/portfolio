@@ -71,7 +71,7 @@ const Page = () => {
                         data-umami-event="Overview button"
                         data-umami-event-id={page.title}
                       >
-                        Overview
+                        Case Study
                         <FiBookOpen />
                       </Link>
                     </Button>

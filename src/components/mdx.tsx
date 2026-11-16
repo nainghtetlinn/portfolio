@@ -1,5 +1,6 @@
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
@@ -35,6 +36,22 @@ export function getMDXComponents(components?: MDXComponents) {
         {children}
       </strong>
     ),
+    img: ({ src, alt, width, height, ...props }) => {
+      const srcString = typeof src === "string" ? src : "";
+      const isSvg =
+        srcString.includes("img.shields.io") || srcString.endsWith(".svg");
+
+      return (
+        <Image
+          src={srcString}
+          alt={alt || ""}
+          width={Number(width) || 800}
+          height={Number(height) || 400}
+          unoptimized={isSvg}
+          {...props}
+        />
+      );
+    },
   } satisfies MDXComponents;
 }
 

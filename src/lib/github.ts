@@ -1,10 +1,18 @@
 export function rewriteImageUrls(repo: string, markdown: string): string {
   const rawBase = `https://raw.githubusercontent.com/nainghtetlinn/${repo}/main/`;
 
-  // Replaces ![alt](path) where path does not start with http/https
-  return markdown.replace(
-    /!\[(.*?)\]\((?!https?:\/\/)(?:\.?\/)?(.*?)\)/g,
-    `![$1](${rawBase}$2)`,
+  return (
+    markdown
+      // 1. Replaces ![alt](path) where path does not start with http/https
+      .replace(
+        /!\[(.*?)\]\((?!https?:\/\/)(?:\.?\/)?(.*?)\)/g,
+        `![$1](${rawBase}$2)`,
+      )
+      // 2. Replaces <img ... src="path" ...> (supports single or double quotes)
+      .replace(
+        /(<img\b[^>]*?\bsrc=["'])(?!https?:\/\/)(?:\.?\/)?([^"']+)(["'])/gi,
+        `$1${rawBase}$2$3`,
+      )
   );
 }
 

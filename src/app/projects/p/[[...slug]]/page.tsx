@@ -36,12 +36,21 @@ export default async function Page(
 
   if (!page || !page.data.repo) notFound();
 
-  const raw = await getRepoReadme(page.data.repo);
-  const source = rewriteImageUrls(page.data.repo, raw);
+  let compiled;
 
-  const { body: Content, toc } = await compiler.compile({
-    source,
-  });
+  try {
+    const raw = await getRepoReadme(page.data.repo);
+    const source = rewriteImageUrls(page.data.repo, raw);
+
+    compiled = await compiler.compile({
+      source,
+    });
+  } catch (error) {
+    console.error(`Failed to compile MDX for ${page.data.repo}:`, error);
+    notFound();
+  }
+
+  const { body: Content, toc } = compiled;
 
   return (
     <DocsPage

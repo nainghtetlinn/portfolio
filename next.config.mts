@@ -11,10 +11,6 @@ const nextConfig: NextConfig = {
         hostname: "raw.githubusercontent.com",
         pathname: "/nainghtetlinn/**",
       },
-      {
-        protocol: "https",
-        hostname: "img.shields.io",
-      },
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days

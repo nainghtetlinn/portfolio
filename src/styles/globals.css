@@ -128,6 +128,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-ring: var(--ring);
 
   --color-border: var(--border);
 

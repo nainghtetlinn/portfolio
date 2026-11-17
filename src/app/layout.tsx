@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Script from "next/script";
 
 import { geistMono, orbitronSans } from "@/assets/fonts";
@@ -16,16 +15,6 @@ import { ThemeProvider } from "@/providers/theme-provider";
 // ssr: false — this is required because dynamic({ ssr: false }) can only live
 // inside a Client Component, not directly in a Server Component.
 import { CursorLoader } from "@/components/ui/cursor-loader";
-
-const Navbar = dynamic(
-  () => import("@/components/navbar").then((m) => ({ default: m.Navbar })),
-  { loading: () => <div className="h-20" /> },
-);
-
-const Footer = dynamic(
-  () => import("@/components/footer").then((m) => ({ default: m.Footer })),
-  { loading: () => <div className="h-24" /> },
-);
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -96,9 +85,7 @@ export default function RootLayout({
             defaultTheme="light"
             disableTransitionOnChange
           >
-            <Navbar />
             {children}
-            <Footer />
           </ThemeProvider>
         </div>
         <CursorLoader />

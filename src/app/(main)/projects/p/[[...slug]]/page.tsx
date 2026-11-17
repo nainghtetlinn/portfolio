@@ -46,8 +46,16 @@ export default async function Page(
       source,
     });
   } catch (error) {
-    console.error(`Failed to compile MDX for ${page.data.repo}:`, error);
-    notFound();
+    if (
+      error instanceof Error &&
+      error.message &&
+      error.message.includes("404")
+    ) {
+      notFound();
+    } else {
+      console.error(`Failed to compile MDX for ${page.data.repo}:`, error);
+      throw new Error("Failed to compile MDX");
+    }
   }
 
   const { body: Content, toc } = compiled;

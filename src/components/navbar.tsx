@@ -94,7 +94,7 @@ export const Navbar = () => {
               </li>
             </ul>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3">
               {/* Github */}
               <Button asChild variant={"ghost"} size={"icon"}>
                 <a
@@ -102,7 +102,7 @@ export const Navbar = () => {
                   target="_blank"
                   aria-label="Github account url"
                 >
-                  <FiGithub className="size-5" />
+                  <FiGithub />
                 </a>
               </Button>
 

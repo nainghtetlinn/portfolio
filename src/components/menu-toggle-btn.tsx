@@ -3,39 +3,46 @@
 import { useMenuStore } from "@/lib/menu-store";
 import { AnimatePresence, motion } from "motion/react";
 import { LuMenu, LuX } from "react-icons/lu";
+import { Button } from "@/components/ui/button";
 
 export const MenuToggleBtn = () => {
   const { isOpen, toggle } = useMenuStore();
 
   return (
-    <button
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon"
       onClick={toggle}
-      className="hover:text-primary cursor-pointer py-4 transition-transform duration-300 md:hidden"
+      aria-expanded={isOpen}
       aria-label="Toggle menu"
+      className="hover:text-primary cursor-pointer md:hidden"
     >
       <AnimatePresence mode="wait" initial={false}>
         {isOpen ? (
-          <motion.div
+          <motion.span
             key="close"
             initial={{ rotate: -90, opacity: 0 }}
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: 90, opacity: 0 }}
             transition={{ duration: 0.2 }}
+            className="inline-flex items-center justify-center"
           >
-            <LuX className="size-6" />
-          </motion.div>
+            <LuX className="size-5" />
+          </motion.span>
         ) : (
-          <motion.div
+          <motion.span
             key="menu"
             initial={{ rotate: 90, opacity: 0 }}
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: -90, opacity: 0 }}
             transition={{ duration: 0.2 }}
+            className="inline-flex items-center justify-center"
           >
-            <LuMenu className="size-6" />
-          </motion.div>
+            <LuMenu className="size-5" />
+          </motion.span>
         )}
       </AnimatePresence>
-    </button>
+    </Button>
   );
 };

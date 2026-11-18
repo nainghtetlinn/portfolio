@@ -58,6 +58,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        <meta
+          name="google-site-verification"
+          content="QIYuR96r9_joJqTuSt9Rp6F3oLot7Zb8LNi0aVGgNBY"
+        />
         {/*
           Preload the LCP hero image so the browser fetches it as soon as the
           HTML arrives — before React even executes. This is the single most
